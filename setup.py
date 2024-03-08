@@ -1,0 +1,39 @@
+from setuptools import setup, find_packages
+
+# Lesen der README-Datei für die Beschreibung
+with open('README.md', 'r') as f:
+    long_description = f.read()
+
+# Hinzufügen der Dokumentation zum setup-Aufruf
+setup(
+    name='loggingpython',
+    version='1.0.0',
+    description='Loggingpython is a Python package that provides a simple and\
+ extensible way to integrate logging into your applications. The package\
+ starts with a simple logger and can be extended with additional functions to\
+ meet the requirements of your application.',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    author='mrmajor.programmer',
+    author_email='mrmajork.programmer@gmail.com',
+    url='https://github.com/loggingpython-Community/loggingpython',
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
+    install_requires=['colorama'],
+    license='MIT',
+    classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Libraries',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Software Development :: Libraries :: Python Modules'
+        'Topic :: System :: Logging',
+    ],
+    # Hinzufügen der Dokumentation
+    include_package_data=True,
+    package_data={
+        '': ['docs/*.md'],
+    },
+)
