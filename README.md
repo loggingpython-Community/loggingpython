@@ -58,7 +58,7 @@ filehandler = lp.FileHandler(logger.name)
 logger.addHandler(filehandler)
 
 # Creat a Consolehandler
-consolehandler = lp.Consolehandler()
+consolehandler = lp.ConsoleHandler()
 logger.addHandler(consolehandler)
 ```
 
