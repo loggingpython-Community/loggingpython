@@ -86,8 +86,7 @@ This example shows how to configure and use a basic logger to generate various t
 
 ---
 
-We welcome your contributions to the development of loggingpython. If you have feedback, suggestions or would like to contribute to the development, please visit our [GitHub repository](https://github.com/loggingpython-Community/loggingpython) for more information. You can also find more details in our [wiki](https://github.com/loggingpython-Community/loggingpython/wiki)
-. For more detailed information, please also visit our package page on [PyPi](https://pypi.org/project/loggingpython).
+We welcome your contributions to the development of loggingpython. If you have feedback, suggestions or would like to contribute to the development, please visit our [GitHub repository](https://github.com/loggingpython-Community/loggingpython) for more information. You can also find more details in our [wiki](https://github.com/loggingpython-Community/loggingpython/wiki) or in the folder `Docs`. For more detailed information, please also visit our package page on [PyPi](https://pypi.org/project/loggingpython).
 
 ---
 
