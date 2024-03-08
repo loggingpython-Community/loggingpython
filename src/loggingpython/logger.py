@@ -63,7 +63,7 @@ class Logger:
             bool: True if the log level is under the maximum, False otherwise.
         """
         return self._SUPPORTED_LEVELS.index(loglevel) <= \
-            self._SUPPORTED_LEVELS.index(self.min_loglevel)
+            self._SUPPORTED_LEVELS.index(self.max_loglevel)
 
     def _get_iso_8601_timestamp(self) -> str:
         """
