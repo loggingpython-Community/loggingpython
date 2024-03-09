@@ -1,15 +1,12 @@
 import os
 import json
 from datetime import datetime
-import hashlib
 
 from .handler import Handler
 
 
 class JSONHandler(Handler):
-    def __init__(self, name: str, path: str = "logs",
-                 logformat_string: str = "%(asctime)s: [%(loggername)s]: \
-[%(loglevel)s]: %(message)s") -> None:
+    def __init__(self, name: str, path: str = "logs") -> None:
         """
         Initializes the FileHandler with the given name, log path, and log
             format string.
@@ -28,22 +25,35 @@ class JSONHandler(Handler):
         self._current_date: str = datetime.now().strftime("%Y-%m-%d")
         self.file: str = f"{self.path}/{self.name}_{self._current_date}.json"
         self._mk_logfile(self.file)
-        self.file = open(self.file, "a")
-
-        self.logformat_string: str = logformat_string
+        # Initialisieren Sie das JSON-Objekt hier
+        self.log_data = {}
 
     def emit(self, record: dict) -> None:
         """
-        Writes a log record to the file in JSON format.
+        Fügt eine Log-Nachricht zum JSON-Objekt hinzu und überprüft, ob das
+            Datum geändert wurde.
 
         Args:
-            record (dict): A dictionary containing the log record details.
+            record (dict): Ein Wörterbuch, das die Details des Log-Eintrags
+                enthält.
         """
-        formatted_message = self._format_message(record)
+        # Generieren Sie einen Hash für die Log-Nachricht
+        message_hash = hash(str(record))
+        # Fügen Sie die Log-Nachricht zum JSON-Objekt hinzu
+        self.log_data[str(message_hash)] = record
+        # Überprüfen Sie, ob das Datum geändert wurde und aktualisieren Sie
+        # die Datei entsprechend
         self._update_file()
-        json_message = json.dumps(formatted_message)
-        self.file.write(json_message + ",\n")
-        self.file.flush()
+        # Schreiben Sie das JSON-Objekt in die Datei
+        self._write_log_data_to_file()
+
+    def _write_log_data_to_file(self):
+        """
+        Schreibt das JSON-Objekt in die Datei.
+        """
+        print(self.file)
+        with open(self.file, 'w') as file:
+            file.write(json.dumps(self.log_data, indent=4))
 
     def _update_file(self):
         """
@@ -51,10 +61,12 @@ class JSONHandler(Handler):
         """
         current_date = datetime.now().strftime("%Y-%m-%d")
         if current_date != self._current_date:
-            self.current_date = current_date
+            self._current_date = current_date
             self._close_file()
-            filename = f"{self.logpath}/{self.name}_{self._current_date}.log"
+            filename = f"{self.path}/{self.name}_{self._current_date}.json"
             self.file = open(filename, "a")
+            # Reset log_data for the new file
+            self.log_data = {}
 
     def _close_file(self):
         """
@@ -110,8 +122,7 @@ class JSONHandler(Handler):
             "loggername": record.get("loggername", ""),
         }
 
-        logformat_string = self.logformat_string
-        return self._format_in_json(logformat_string % values)
+        return self._format_in_json(values)
 
     def _format_in_json(self, record: dict) -> dict:
         """
@@ -124,11 +135,12 @@ class JSONHandler(Handler):
         Returns:
             dict: The formatted log message as a JSON object with hashed keys.
         """
-        message_hash = hashlib.sha256(record.encode()).hexdigest()
+        sorted_keys = sorted(record.keys())
+        string_representation = str({key: record[key] for key in sorted_keys})
+        message_hash = hash(string_representation)
         values = {
             message_hash: record,
         }
-
         return values
 
     def __repr__(self) -> str:
