@@ -23,6 +23,10 @@ logger.addHandler(filehandler)
 # Add a ConsoleHandler
 consolehandler = lp.ConsoleHandler()
 logger.addHandler(consolehandler)
+
+# Creat a JSONhandler
+jsonhandler = lp.JSONHandler()
+logger.addHandler(jsonhandler)
 ```
 
 Now you can use the logger to generate different types of log messages:
