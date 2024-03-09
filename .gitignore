@@ -1,6 +1,11 @@
 # Distribution directory
 *.egg-info/
 
+# testsa and logs
+test.py
+test.md
+logs
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

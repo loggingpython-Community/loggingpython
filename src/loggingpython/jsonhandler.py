@@ -26,7 +26,7 @@ class JSONHandler(Handler):
         self.file: str = f"{self.path}/{self.name}_{self._current_date}.json"
         self._mk_logfile(self.file)
         # Initialisieren Sie das JSON-Objekt hier
-        self.log_data = {}
+        self.log_data: dict[str, str] = {}
 
     def emit(self, record: dict) -> None:
         """
@@ -62,10 +62,9 @@ class JSONHandler(Handler):
         if current_date != self._current_date:
             self._current_date = current_date
             self._close_file()
-            filename = f"{self.path}/{self.name}_{self._current_date}.json"
-            self.file = open(filename, "a")
-            # Reset log_data for the new file
-            self.log_data = {}
+            file: str = f"{self.path}/{self.name}_{self._current_date}.json"
+            self.file = open(file, "a")
+            self.log_data: dict[str, str] = {}
 
     def _close_file(self):
         """
