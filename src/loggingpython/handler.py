@@ -23,3 +23,9 @@ class Handler:
         - NotImplementedError: If the method is not implemented by a subclass.
         """
         raise NotImplementedError("Subclasses must implement this!")
+
+    def __repr__(self) -> str:
+        return "Handler()"
+
+    def __str__(self) -> str:
+        return "Handler()"

@@ -1,10 +1,12 @@
 import os
+import json
 from datetime import datetime
+import hashlib
 
 from .handler import Handler
 
 
-class FileHandler(Handler):
+class JSONHandler(Handler):
     def __init__(self, name: str, path: str = "logs",
                  logformat_string: str = "%(asctime)s: [%(loggername)s]: \
 [%(loglevel)s]: %(message)s") -> None:
@@ -24,7 +26,7 @@ class FileHandler(Handler):
         self.name: str = name
         self.path: str = path
         self._current_date: str = datetime.now().strftime("%Y-%m-%d")
-        self.file: str = f"{self.path}/{self.name}_{self._current_date}.log"
+        self.file: str = f"{self.path}/{self.name}_{self._current_date}.json"
         self._mk_logfile(self.file)
         self.file = open(self.file, "a")
 
@@ -32,14 +34,15 @@ class FileHandler(Handler):
 
     def emit(self, record: dict) -> None:
         """
-        Writes a log record to the file.
+        Writes a log record to the file in JSON format.
 
         Args:
             record (dict): A dictionary containing the log record details.
         """
         formatted_message = self._format_message(record)
         self._update_file()
-        self.file.write(formatted_message + "\n")
+        json_message = json.dumps(formatted_message)
+        self.file.write(json_message + ",\n")
         self.file.flush()
 
     def _update_file(self):
@@ -108,10 +111,28 @@ class FileHandler(Handler):
         }
 
         logformat_string = self.logformat_string
-        return logformat_string % values
+        return self._format_in_json(logformat_string % values)
+
+    def _format_in_json(self, record: dict) -> dict:
+        """
+        Formats a log message based on the provided log data into a JSON
+            object with hashed keys.
+
+        Args:
+            record (dict): A dictionary containing the log message details.
+
+        Returns:
+            dict: The formatted log message as a JSON object with hashed keys.
+        """
+        message_hash = hashlib.sha256(record.encode()).hexdigest()
+        values = {
+            message_hash: record,
+        }
+
+        return values
 
     def __repr__(self) -> str:
-        return f"FileHandler:{self.name}, {self.path}, {self.logformat_string}"
+        return f"JSONHandler:{self.name}, {self.path}, {self.logformat_string}"
 
     def __str__(self) -> str:
-        return f"FileHandler:{self.name}, {self.path}, {self.logformat_string}"
+        return f"JSONHandler:{self.name}, {self.path}, {self.logformat_string}"

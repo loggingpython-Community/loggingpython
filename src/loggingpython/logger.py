@@ -11,7 +11,7 @@ class Logger:
 
     _SUPPORTED_LEVELS: list = list(LogLevel)
 
-    def __init__(self, name: str = "Root-Logger",
+    def __init__(self, name: str,
                  time_format: str = None,
                  min_loglevel: LogLevel = LogLevel.INFO,
                  max_loglevel: LogLevel = LogLevel.CRITICAL) -> None:

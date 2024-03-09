@@ -120,3 +120,9 @@ class ConsoleHandler(Handler):
 
         logformat_string = self.logformat_string
         return logformat_string % values
+
+    def __repr__(self) -> str:
+        return f"ConsoleHandler:{self.name}, {self.logformat_string}"
+
+    def __str__(self) -> str:
+        return f"ConsoleHandler:{self.name}, {self.logformat_string}"
