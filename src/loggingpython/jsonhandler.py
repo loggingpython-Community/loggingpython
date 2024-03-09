@@ -47,11 +47,10 @@ class JSONHandler(Handler):
         # Schreiben Sie das JSON-Objekt in die Datei
         self._write_log_data_to_file()
 
-    def _write_log_data_to_file(self):
+    def _write_log_data_to_file(self) -> None:
         """
-        Schreibt das JSON-Objekt in die Datei.
+        Writes the JSON object to the file.
         """
-        print(self.file)
         with open(self.file, 'w') as file:
             file.write(json.dumps(self.log_data, indent=4))
 

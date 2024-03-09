@@ -7,8 +7,9 @@ from .handler import Handler
 from .log_levels import LogLevel
 
 
-__version__ = "1.0.3s"
+__version__ = "1.1.0"
 __all__ = ["Logger",
+           "Handler",
            "FileHandler",
            "ConsoleHandler",
            "JSONHandler",
@@ -54,19 +55,11 @@ def getBasicLogger() -> Logger:
     return logger
 
 
-def all_handlers() -> list:
+def get_all_handlers() -> None:
     """
     Returns a list of all available handler classes.
-
-    Returns:
-        list: A list of all handler classes.
     """
-    handlers = [FileHandler, ConsoleHandler, JSONHandler]
-    handler_classes = []
-    for cls in handlers:
-        if issubclass(cls, Handler) and cls is not Handler:
-            handler_classes.append(cls)
-    return handler_classes
+    print("'FileHandler','ConsoleHandler','JSONHandler'")
 
 
 if __name__ != '__main__':
