@@ -65,6 +65,10 @@ logger.addHandler(consolehandler)
 # Creat a JSONhandler
 jsonhandler = lp.JSONHandler()
 logger.addHandler(jsonhandler)
+
+# Creat a SQLHandler
+sqlhandler = lp.SQLHandler()
+logger.addHandler(sqlhandler)
 ```
 
 Now, we can use the logger to generate various types of log messages:
