@@ -54,7 +54,8 @@ class ConsoleHandler(Handler):
         """
         formatted_message = self._format_message(record)
         color = self._get_color_for_level(record["loglevel"])
-        print(color + formatted_message + Style.RESET_ALL, file=self.stream)
+        self.stream.write(color + formatted_message + Style.RESET_ALL + '\n')
+        self.stream.flush()
 
     def set_logformat(self, logformat_string: str = None) -> str:
         """

@@ -1,7 +1,18 @@
+"""
+`loggingpython` is a Python package that provides a simple and extensible way
+ to integrate logging into your applications. The package starts with a basic
+ logger and can be extended with additional functions to meet the requirements
+of your application.
+
+Look at the Docs for more in
+"""
+
+
 from .logger import Logger
 from .filehandler import FileHandler
 from .consolehandler import ConsoleHandler
 from .jsonhandler import JSONHandler
+from .sqlhandler import SQLHandler
 
 from .handler import Handler
 from .log_levels import LogLevel
@@ -9,14 +20,15 @@ from .log_levels import LogLevel
 
 __version__ = "1.1.2"
 __all__ = ["Logger",
+           # Hander
            "Handler",
            "FileHandler",
            "ConsoleHandler",
            "JSONHandler",
+           "SQLHandler",
+           # help class
            "LogLevel"]
 
-__author__ = "mrmajor.programmer"
-__author_email__ = "mrmajork.programmer@gmail.com"
 __license__ = "MIT"
 
 
@@ -55,11 +67,22 @@ def getBasicLogger() -> Logger:
     return logger
 
 
-def get_all_handlers() -> None:
+def get_all_handlers() -> dict:
     """
-    Returns a list of all available handler classes.
+    Returns a dictionary of all available handler classes.
+
+    Returns:
+        dict: A dictionary where keys are the handler names and values are
+            the handler classes.
     """
-    print("'FileHandler','ConsoleHandler','JSONHandler'")
+    handlers = {}
+    for handler_name in __all__:
+        if handler_name.endswith("Handler"):
+            module_name = f"{__name__}.{handler_name.lower()}"
+            handler_module = __import__(module_name, fromlist=[handler_name])
+            handler_class = getattr(handler_module, handler_name)
+            handlers[handler_name] = handler_class
+    return handlers
 
 
 if __name__ != '__main__':
