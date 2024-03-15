@@ -7,7 +7,7 @@ with open('README.md', 'r') as f:
 # Hinzufügen der Dokumentation zum setup-Aufruf
 setup(
     name='loggingpython',
-    version='1.1.2',
+    version='1.2.0',
     description='Loggingpython is a Python package that provides a simple and\
  extensible way to integrate logging into your applications. The package\
  starts with a simple logger and can be extended with additional functions to\
