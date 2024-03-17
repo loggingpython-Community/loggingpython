@@ -1,10 +1,8 @@
 from setuptools import setup, find_packages
 
-# Lesen der README-Datei für die Beschreibung
 with open('README.md', 'r') as f:
     long_description = f.read()
 
-# Hinzufügen der Dokumentation zum setup-Aufruf
 setup(
     name='loggingpython',
     version='1.2.0',
@@ -30,7 +28,6 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: System :: Logging',
     ],
-    # Hinzufügen der Dokumentation
     include_package_data=True,
     package_data={
         '': ['docs/*.md'],
