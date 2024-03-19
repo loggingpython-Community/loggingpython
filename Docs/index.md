@@ -8,12 +8,14 @@ Welcome to the documentation for the `loggingpython` package. Here you will find
 - [Usage](https://github.com/loggingpython-Community/loggingpython/wiki/Usage)
 - [Contribute](https://github.com/loggingpython-Community/loggingpython/wiki/Contribute)
 - [API reference](https://github.com/loggingpython-Community/loggingpython/wiki/API-reference)
+- [Lib List](https://github.com/loggingpython-Community/loggingpython/wiki/Lib-List)
 
 ### Links to files
 - [Installation](installation.md)
 - [Usage](usage.md)
 - [Contribute](contributing.md)
 - [API reference](api_reference.md)
+- [Lib List](lib_list.md)
 
 ## Introduction
 

@@ -38,7 +38,9 @@ def hello_from_loggingpython() -> None:
     loggingpython community.
     """
     print(f"""Hello from the loggingpython-community.
-version: {__version__}
+We also use other libs, for a list of all libs look here: \
+https://github.com/loggingpython-Community/loggingpython/wiki/Lib-List
+Version: {__version__}
 PyPi: https://pypi.org/project/loggingpython
 GitHub: https://github.com/loggingpython-Community/loggingpython""")
 

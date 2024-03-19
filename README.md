@@ -1,6 +1,6 @@
 # loggingpython
 
-`loggingpython` is a Python package that provides a simple and extensible way to integrate logging into your applications. The package starts with a basic logger and can be extended with additional functions to meet the requirements of your application.
+`loggingpython` is a Python package whichwhich provides a simple and extensible way to integrate logging into your applications. The package starts with a basic logger and can be extended with additional functions to meet the requirements of your application.
 
 Please always use the most current version
 ---
@@ -45,7 +45,7 @@ import loggingpython as lp
 logger = lp.getBasicLogger()
 ```
 
-This creates a logger with a Filehandler and a Consolehandler, the Consolehandler has colors at message.
+This creates a logger with a Filehandler and a Consolehandler, the Consolehandler has colors in the message.
 
 This creat a logger without handlers.
 ```python
@@ -54,26 +54,25 @@ import loggingpython as lp
 # Create a logger
 logger = lp.getLogger()
 
-# Creat a FileHandler
+# Create a FileHandler
 filehandler = lp.FileHandler(logger.name)
 logger.addHandler(filehandler)
 
-# Creat a Consolehandler
+# Create a Consolehandler
 consolehandler = lp.ConsoleHandler()
 logger.addHandler(consolehandler)
 
-# Creat a JSONhandler
+# Create a JSONhandler
 jsonhandler = lp.JSONHandler()
 logger.addHandler(jsonhandler)
 
-# Creat a SQLHandler
+# Create a SQLHandler
 sqlhandler = lp.SQLHandler()
 logger.addHandler(sqlhandler)
 ```
 
 Now, we can use the logger to generate various types of log messages:
 
-python
 ``` python
 # Logging messages at different levels
 logger.debug("This is a debug message.")
@@ -89,7 +88,7 @@ except ZeroDivisionError as e:
     logger.error("An exception occurred: %s", e)
 ```
 
-The file handler saves the logs in the `logs/file.log directory`.
+The file handler saves the logs in the `logs/file.log` directory.
 
 This example shows how to configure and use a basic logger to generate various types of log messages.
 
