@@ -1,6 +1,6 @@
 # loggingpython
 
-`loggingpython` is a Python package whichwhich provides a simple and extensible way to integrate logging into your applications. The package starts with a basic logger and can be extended with additional functions to meet the requirements of your application.
+`loggingpython` is a Python package which provides a simple and extensible way to integrate logging into your applications. The package starts with a basic logger and can be extended with additional functions to meet the requirements of your application.
 
 Please always use the most current version
 ---
@@ -47,7 +47,7 @@ logger = lp.getBasicLogger()
 
 This creates a logger with a Filehandler and a Consolehandler, the Consolehandler has colors in the message.
 
-This creat a logger without handlers.
+This creates a logger without handlers.
 ```python
 import loggingpython as lp
 
