@@ -1,10 +1,11 @@
 import os
 from datetime import datetime
+import pandas as pd
 
 from .handler import Handler
 
 
-class FileHandler(Handler):
+class CSVHandler(Handler):
     def __init__(self, name: str, path: str = "logs",
                  logformat_string: str = "%(asctime)s: [%(loggername)s]: \
 [%(loglevel)s]: %(message)s") -> None:
@@ -24,7 +25,7 @@ class FileHandler(Handler):
         self.name: str = name
         self.path: str = path
         self._current_date: str = datetime.now().strftime("%Y-%m-%d")
-        self.file: str = f"{self.path}/{self.name}_{self._current_date}.log"
+        self.file: str = f"{self.path}/{self.name}_{self._current_date}.csv"
         self._mk_logfile(self.file)
         self.file = open(self.file, "a")
 
@@ -39,7 +40,7 @@ class FileHandler(Handler):
         """
         formatted_message = self._format_message(record)
         self._update_file()
-        self.file.write(formatted_message + "\n")
+        self.file.write(formatted_message)
         self.file.flush()
 
     def _update_file(self):
@@ -50,7 +51,7 @@ class FileHandler(Handler):
         if current_date != self._current_date:
             self.current_date = current_date
             self._close_file()
-            filename = f"{self.logpath}/{self.name}_{self._current_date}.log"
+            filename = f"{self.logpath}/{self.name}_{self._current_date}.csv"
             self.file = open(filename, "a")
 
     def _close_file(self):
@@ -107,11 +108,15 @@ class FileHandler(Handler):
             "message": record.get("message", ""),
         }
 
-        logformat_string = self.logformat_string
-        return logformat_string % values
+        df = pd.DataFrame([values])
+
+        formatted_message = df.to_csv(index=False, header=False, sep=";",
+                                      lineterminator="\n")
+
+        return formatted_message
 
     def __repr__(self) -> str:
-        return f"FileHandler:{self.name}, {self.path}, {self.logformat_string}"
+        return f"CSVHandler:{self.name}, {self.path}, {self.logformat_string}"
 
     def __str__(self) -> str:
-        return f"FileHandler:{self.name}, {self.path}, {self.logformat_string}"
+        return f"CSVHandler:{self.name}, {self.path}, {self.logformat_string}"

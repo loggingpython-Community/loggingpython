@@ -25,12 +25,16 @@ consolehandler = lp.ConsoleHandler()
 logger.addHandler(consolehandler)
 
 # Creat a JSONhandler
-jsonhandler = lp.JSONHandler()
+jsonhandler = lp.JSONHandler(logger.name)
 logger.addHandler(jsonhandler)
 
 # Creat a SQLHandler
-sqlhandler = lp.SQLHandler()
+sqlhandler = lp.SQLHandler(logger.name)
 logger.addHandler(sqlhandler)
+
+# Creat a CSVHandler
+csvhandler = lp.CSVHandler(logger.name)
+logger.addHandler(csvhandler)
 ```
 
 Now you can use the logger to generate different types of log messages:

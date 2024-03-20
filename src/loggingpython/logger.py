@@ -17,8 +17,10 @@ class Logger:
                  max_loglevel: LogLevel = LogLevel.CRITICAL) -> None:
 
         self.name: str = name
-        self.min_loglevel: LogLevel = min_loglevel
-        self.max_loglevel: LogLevel = max_loglevel
+        self.min_loglevel: LogLevel = min_loglevel \
+            if min_loglevel in LogLevel else LogLevel.INFO
+        self.max_loglevel: LogLevel = max_loglevel \
+            if max_loglevel in LogLevel else LogLevel.CRITICAL
 
         self.handlers: list[Handler] = []
 
@@ -98,11 +100,11 @@ class Logger:
             dict: A dictionary containing the formatted log message.
         """
         values = {
-            "message": message,
-            "loglevel": loglevel.name,
-            "asctime": self._get_timestamp(),
-            "iso_8601_time": self._get_iso_8601_timestamp(),
             "loggername": self.name,
+            "iso_8601_time": self._get_iso_8601_timestamp(),
+            "asctime": self._get_timestamp(),
+            "loglevel": loglevel.name,
+            "message": message,
         }
         return values
 

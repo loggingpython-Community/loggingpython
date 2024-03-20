@@ -7,8 +7,10 @@ In this section you will find a detailed description of the API of `loggingpytho
 - `Logger`: The main class for logging.
 - `FileHandler`: A handler for writing logs to a file.
 - `ConsoleHandler`: A handler for displaying logs in the console.
-- `JSONHandler`: A handler for writing logs in the json.
-- `SQLHandler`: A handler for writing logs in the database.
+- `JSONHandler`: A handler for writing logs in a json file.
+- `SQLHandler`: A handler for writing logs in a database.
+- `CSVHandler`: A handler for writing logs in a csv file.
+
 
 ## Functions
 

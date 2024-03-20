@@ -112,11 +112,11 @@ class ConsoleHandler(Handler):
             str: The formatted log message.
         """
         values = {
-            "message": record.get("message", ""),
-            "loglevel": record.get("loglevel", ""),
-            "asctime": record.get("asctime", ""),
-            "iso_8601_time": record.get("iso_8601_time", ""),
             "loggername": record.get("loggername", ""),
+            "iso_8601_time": record.get("iso_8601_time", ""),
+            "asctime": record.get("asctime", ""),
+            "loglevel": record.get("loglevel", ""),
+            "message": record.get("message", ""),
         }
 
         logformat_string = self.logformat_string

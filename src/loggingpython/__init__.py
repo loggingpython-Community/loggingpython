@@ -13,6 +13,7 @@ from .filehandler import FileHandler
 from .consolehandler import ConsoleHandler
 from .jsonhandler import JSONHandler
 from .sqlhandler import SQLHandler
+from .csvhandler import CSVHandler
 
 from .handler import Handler
 from .log_levels import LogLevel
@@ -26,6 +27,7 @@ __all__ = ["Logger",
            "ConsoleHandler",
            "JSONHandler",
            "SQLHandler",
+           "CSVHandler",
            # help class
            "LogLevel"]
 
