@@ -1,0 +1,17 @@
+Um ein System zu erstellen, das Code generiert, formatiert, prüft, debuggt, kommentiert und Dokumentationen erstellt, und das auf einem lokalen System ohne Internetzugang läuft, können Sie die folgenden Schritte und Technologien in Betracht ziehen:
+
+Code-Generierung und -Formatierung:
+Verwenden Sie ein LLM (Large Language Model) wie GPT-3 oder eine spezialisierte Version davon, die auf Code-Generierung und -Formatierung trainiert ist. Diese Modelle können Code basierend auf gegebenen Spezifikationen generieren und formatieren, um die Lesbarkeit zu verbessern 11.
+Für die Formatierung können Sie Tools wie Flake8 für Python verwenden. Flake8 ist ein Tool zur Code-Qualitätskontrolle, das PEP 8-Konformität überprüft und andere Stilprobleme identifiziert.
+Code-Prüfung und Debugging:
+Nutzen Sie LLMs, die auf großen Code-Repositories trainiert wurden, um Code-Prüfungs- und Debugging-Prozesse zu automatisieren. Diese Modelle können helfen, Programmierfehler zu identifizieren und zu beheben 11.
+Für die Ausführung des Codes in einer Sandbox können Sie lokale Entwicklungsumgebungen oder spezialisierte Tools verwenden, die Code in einer isolierten Umgebung ausführen können, um Sicherheitsrisiken zu minimieren.
+Kommentare und Dokumentation:
+LLMs können auch dazu verwendet werden, Kommentare zu generieren und Dokumentationen in Markdown-Format zu erstellen. Sie können den Kontext des Codes (Kommentare, Funktionsnamen, Variablennamen) nutzen, um relevante und hilfreiche Kommentare und Dokumentationen zu erstellen 4.
+Lokale Ausführung:
+Um LLMs lokal auszuführen, können Sie OpenLLM verwenden, eine Open-Plattform für die Betreibung von LLMs in Produktion. OpenLLM ermöglicht das Fine-Tuning, Servieren, Deployen und Überwachen von LLMs mit Leichtigkeit 14.
+Für die lokale Ausführung von LLMs auf Ihrem Computer oder Server benötigen Sie möglicherweise leistungsfähige Hardware, da LLMs rechenintensiv sein können. Sie können LLMs auf CPUs und GPUs ausführen, abhängig von den verfügbaren Ressourcen 15.
+Automatisierung:
+Um den gesamten Prozess zu automatisieren, können Sie ein Backend-System mit Python oder Node.js erstellen, das die Interaktion mit dem LLM und die Ausführung der verschiedenen Schritte (Code-Generierung, Formatierung, Prüfung, Debugging, Kommentare, Dokumentation) verwaltet 11.
+Für die Benutzerinteraktion können Sie eine benutzerfreundliche Web-basierte Benutzeroberfläche mit HTML, CSS und JavaScript erstellen 11.
+Durch die Kombination dieser Technologien und Ansätze können Sie ein leistungsfähiges System erstellen, das Code-Entwicklung und -Wartung unterstützt, ohne auf Internetzugang angewiesen zu sein.

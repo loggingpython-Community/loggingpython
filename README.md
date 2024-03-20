@@ -1,4 +1,5 @@
 # loggingpython
+## Version 1.3.0
 
 `loggingpython` is a Python package which provides a simple and extensible way to integrate logging into your applications. The package starts with a basic logger and can be extended with additional functions to meet the requirements of your application.
 
