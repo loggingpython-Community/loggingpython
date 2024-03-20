@@ -4,16 +4,16 @@
  logger and can be extended with additional functions to meet the requirements
 of your application.
 
-Look at the Docs for more in
+In the Docs you will find further information about.
 """
 
 
 from .logger import Logger
-from .filehandler import FileHandler
-from .consolehandler import ConsoleHandler
-from .jsonhandler import JSONHandler
-from .sqlhandler import SQLHandler
-from .csvhandler import CSVHandler
+from .handler.filehandler import FileHandler
+from .handler.consolehandler import ConsoleHandler
+from .handler.jsonhandler import JSONHandler
+from .handler.sqlhandler import SQLHandler
+from .handler.csvhandler import CSVHandler
 
 from .handler import Handler
 from .log_levels import LogLevel

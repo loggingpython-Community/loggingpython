@@ -2,7 +2,7 @@ from typing import TextIO
 from colorama import Fore, Style
 import sys
 
-from .log_levels import LogLevel
+from ..log_levels import LogLevel
 from .handler import Handler
 
 
