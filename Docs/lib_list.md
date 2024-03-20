@@ -8,6 +8,7 @@ This list contains all external libraries used in the `loggingpython` project.
 - `datetime`: For date and time operations.
 - `json`: For working with JSON data.
 - `os`: For operating system-specific functions.
+- `pandas`: For creating and manipulating CSV files.
 - `sqlite3`: For working with SQLite databases.
 - `enum`: For the creation of enumerations.
 
