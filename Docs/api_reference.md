@@ -11,7 +11,6 @@ In this section you will find a detailed description of the API of `loggingpytho
 - `SQLHandler`: A handler for writing logs in a database.
 - `CSVHandler`: A handler for writing logs in a csv file.
 
-
 ## Functions
 
 - `getLogger()`: Creates and returns an instance of the logger.

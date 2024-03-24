@@ -19,6 +19,9 @@ from .handler import Handler
 from .log_levels import LogLevel
 
 
+import importlib
+
+
 __version__ = "1.1.2"
 __all__ = ["Logger",
            # Hander
@@ -65,13 +68,13 @@ def getBasicLogger() -> Logger:
     Returns:
         Logger: A logger with predefined handlers.
     """
-    logger = getLogger()
+    logger: Logger = getLogger()
     logger.addHandler(FileHandler(logger.name))
     logger.addHandler(ConsoleHandler())
     return logger
 
 
-def get_all_handlers() -> dict:
+def get_all_handlers() -> dict[str]:
     """
     Returns a dictionary of all available handler classes.
 
@@ -82,10 +85,15 @@ def get_all_handlers() -> dict:
     handlers = {}
     for handler_name in __all__:
         if handler_name.endswith("Handler"):
-            module_name = f"{__name__}.{handler_name.lower()}"
-            handler_module = __import__(module_name, fromlist=[handler_name])
-            handler_class = getattr(handler_module, handler_name)
-            handlers[handler_name] = handler_class
+            # Adjust the module name to correctly resolve the import path
+            module_name = f"{__name__}.handler.{handler_name.lower()}"
+            try:
+                # Use importlib.import_module for dynamic import
+                handler_module = importlib.import_module(module_name)
+                handler_class = getattr(handler_module, handler_name)
+                handlers[handler_name] = handler_class
+            except ModuleNotFoundError as e:
+                print(f"Failed to import {handler_name}: {e}")
     return handlers
 
 

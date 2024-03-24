@@ -77,7 +77,7 @@ class Logger:
 
         return datetime.now(timezone.utc).strftime(self.iso_8601_format)
 
-    def _get_timestamp(self) -> None:
+    def _get_timestamp(self) -> str:
         """
         Returns the current timestamp in a formatted string.
 
@@ -88,7 +88,7 @@ class Logger:
             return datetime.now(timezone.utc).strftime(self.time_format)
         return self._get_iso_8601_timestamp()
 
-    def _format_message(self, message: str, loglevel: LogLevel) -> dict:
+    def _format_message(self, message: str, loglevel: LogLevel) -> dict[str]:
         """
         Formats the log message with additional information.
 
