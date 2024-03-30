@@ -48,34 +48,6 @@ logger = lp.getBasicLogger()
 
 This creates a logger with a Filehandler and a Consolehandler, the Consolehandler has colors in the message.
 
-This creates a logger without handlers.
-```python
-import loggingpython as lp
-
-# Create a logger
-logger = lp.getLogger()
-
-# Create a FileHandler
-filehandler = lp.FileHandler(logger.name)
-logger.addHandler(filehandler)
-
-# Create a Consolehandler
-consolehandler = lp.ConsoleHandler()
-logger.addHandler(consolehandler)
-
-# Create a JSONhandler
-jsonhandler = lp.JSONHandler(logger.name)
-logger.addHandler(jsonhandler)
-
-# Create a SQLHandler
-sqlhandler = lp.SQLHandler(logger.name)
-logger.addHandler(sqlhandler)
-
-# Creat a CSVHandler
-csvhandler = lp.CSVHandler(logger.name)
-logger.addHandler(csvhandler)
-```
-
 Now, we can use the logger to generate various types of log messages:
 
 ``` python
@@ -86,11 +58,11 @@ logger.warning("This is a warning.")
 logger.error("This is an error.")
 logger.critical("This is a critical error.")
 
-#Log message with an exception
+# Log message with an exception
 try:
     1 / 0 
 except ZeroDivisionError as e:
-    logger.error("An exception occurred: %s", e)
+    logger.error(f"An exception occurred: {e}")
 ```
 
 The file handler saves the logs in the `logs/file.log` directory.
@@ -106,3 +78,16 @@ We welcome your contributions to the development of loggingpython. If you have f
 ## License
 
 `loggingpython` is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+## Further resources
+
+- [GitHub Repository](https://github.com/loggingpython-Community/loggingpython)
+- [Issue Tracker](https://github.com/loggingpython-Community/loggingpython/issues)
+- [Changelog](https://github.com/loggingpython-Community/loggingpython/blob/main/CHANGELOG.md)
+- [PyPi](https://pypi.org/project/loggingpython/)
+
+## Social media
+
+- [GitHub](https://github.com/loggingpython-Community)
+
+---
