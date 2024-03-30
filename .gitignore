@@ -6,6 +6,9 @@ test.py
 test.md
 logs
 
+# syslog things
+*.pem
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

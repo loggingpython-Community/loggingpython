@@ -4,26 +4,26 @@ This list contains all external libraries used in the `loggingpython` project.
 
 ## Main libraries
 
-- `colorama`: For the color design of the console output.
-- `datetime`: For date and time operations.
-- `json`: For working with JSON data.
-- `os`: For operating system-specific functions.
-- `pandas`: For creating and manipulating CSV files.
-- `sqlite3`: For working with SQLite databases.
-- `enum`: For the creation of enumerations.
+- [`colorama`](https://pypi.org/project/colorama/): For the color design of the console output.
+- [`datetime`](https://docs.python.org/3/library/datetime.html): For date and time operations.
+- [`json`](https://docs.python.org/3/library/json.html): For working with JSON data.
+- [`os`](https://docs.python.org/3/library/os.html): For operating system-specific functions.
+- [`pandas`](https://pandas.pydata.org/): For creating and manipulating CSV files.
+- [`sqlite3`](https://docs.python.org/3/library/sqlite3.html): For working with SQLite databases.
+- [`enum`](https://docs.python.org/3/library/enum.html):: For the creation of enumerations.
 
 ## Additional libraries
 
-- `sys`: For accessing some variables and functions that interact with the Python interpreter.
+- [`sys`](https://docs.python.org/3/library/sys.html): For accessing some variables and functions that interact with the Python interpreter.
 
 ## Test and development tools
 
-- `pytest`: For writing and executing tests.
-- `flake8`: For static code analysis.
+- [`pytest`](https://docs.pytest.org/en/latest/): For writing and executing tests.
+- [`flake8`](https://flake8.pycqa.org/en/latest/): For static code analysis.
 
 ## Others
 
-- `typing`: For the type annotations.
+- [`typing`](https://docs.python.org/3/library/typing.html): For the type annotations.
 
 ---
 
@@ -43,5 +43,3 @@ This list contains all external libraries used in the `loggingpython` project.
 - [GitHub](https://github.com/loggingpython-Community)
 
 ---
-
-Translated with DeepL.com (free version)

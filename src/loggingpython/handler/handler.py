@@ -7,7 +7,7 @@ class Handler:
     emit method to provide specific handling behavior.
     """
 
-    def emit(self, message: str) -> None:
+    def emit(self, record: dict) -> None:
         """
         Emits a log message.
 

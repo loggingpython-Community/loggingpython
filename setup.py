@@ -17,7 +17,8 @@ setup(
     url='https://github.com/loggingpython-Community/loggingpython',
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
-    install_requires=['colorama'],
+    install_requires=['colorama', 'datetime', 'json', 'os', 'pandas',
+                      'sqlite3'],
     license='MIT',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
