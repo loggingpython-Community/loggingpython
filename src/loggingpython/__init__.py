@@ -9,11 +9,11 @@ In the Docs you will find further information about.
 
 
 from .logger import Logger
-from .handler.filehandler import FileHandler
-from .handler.consolehandler import ConsoleHandler
-from .handler.jsonhandler import JSONHandler
-from .handler.sqlhandler import SQLHandler
-from .handler.csvhandler import CSVHandler
+from .handler import FileHandler
+from .handler import ConsoleHandler
+from .handler import JSONHandler
+from .handler import SQLHandler
+from .handler import CSVHandler
 
 from .handler import Handler
 from .log_levels import LogLevel
