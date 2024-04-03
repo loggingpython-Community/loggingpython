@@ -221,3 +221,15 @@ class Logger:
             ValueError: If the level is not supported.
         """
         self._log(message, loglevel=LogLevel.CRITICAL)
+
+    def catch_debug(self, func):
+        def wrapper(*args, **kwargs):
+            try:
+                self.debug(f"func '{func.__name__}' with {args}, {kwargs}")
+                result = func(*args, **kwargs)
+                self.debug(f"func '{func.__name__}' completed successfully, \
+with '{result}'")
+                return result
+            except Exception as e:
+                self.error(f"{func.__name__} failed with error: {str(e)}")
+        return wrapper
