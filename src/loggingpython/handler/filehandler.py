@@ -5,6 +5,16 @@ from .handler import Handler
 
 
 class FileHandler(Handler):
+    """
+    A class for handling log messages in files.
+
+    This class inherits from the Handler class and implements specific
+    methods for formatting and outputting log messages to files. It supports
+    the creation of log files in a specified directory, automatic file rotation
+    based on the current date, and allows customization of the formatting
+    string. The FileHandler ensures that log messages are stored persistently
+    and can be reviewed later for debugging or auditing purposes.
+    """
     def __init__(self, name: str, path: str = "logs",
                  logformat_string: str = "%(asctime)s: [%(loggername)s]: \
 [%(loglevel)s]: %(message)s") -> None:

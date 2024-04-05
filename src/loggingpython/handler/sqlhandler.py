@@ -6,6 +6,18 @@ from .handler import Handler
 
 
 class SQLHandler(Handler):
+    """
+    A class for handling log messages in SQL databases.
+
+    This class inherits from the Handler class and implements specific
+    methods for formatting and outputting log messages into SQL databases. It
+    supports the creation of new log databases based on the current date and
+    allows customization of the log format string. The SQLHandler ensures
+    that log messages are stored in a structured and easily accessible format,
+    making it suitable for further analysis or review. It also includes
+    features for updating the log database if the current date has changed and
+    for creating the necessary database structure.
+    """
     def __init__(self, name: str, path: str = "logs") -> None:
         """
         Initializes the SQLHandler with the given name, log path, and log

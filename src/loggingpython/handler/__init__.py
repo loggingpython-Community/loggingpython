@@ -7,6 +7,7 @@ of your application.
 In the Docs you will find further information about.
 """
 
+from .handler import Handler
 
 from .filehandler import FileHandler
 from .consolehandler import ConsoleHandler
@@ -14,8 +15,6 @@ from .jsonhandler import JSONHandler
 from .sqlhandler import SQLHandler
 from .csvhandler import CSVHandler
 from .syshandler import SysHandler
-
-from .handler import Handler
 
 
 __all__ = ["Handler",

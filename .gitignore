@@ -3,8 +3,10 @@
 
 # testsa and logs
 test.py
+test_server.py
 test.md
 logs
+test_feature
 
 # syslog things
 *.pem

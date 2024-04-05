@@ -6,11 +6,21 @@ from .handler import Handler
 
 
 class CSVHandler(Handler):
+    """
+    A class for handling log messages in CSV format.
+
+    This class inherits from the Handler class and implements specific
+    methods for formatting and outputting log messages in CSV files. It
+    supports the creation of new log files based on the current date and
+    allows customization of the log format string. The CSVHandler ensures
+    that log messages are stored in a structured and easily accessible format,
+    making it suitable for further analysis or review.
+    """
     def __init__(self, name: str, path: str = "logs",
                  logformat_string: str = "%(asctime)s: [%(loggername)s]: \
 [%(loglevel)s]: %(message)s") -> None:
         """
-        Initializes the FileHandler with the given name, log path, and log
+        Initializes the CSVHandler with the given name, log path, and log
             format string.
 
         Args:

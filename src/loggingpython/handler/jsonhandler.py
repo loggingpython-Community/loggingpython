@@ -6,9 +6,21 @@ from .handler import Handler
 
 
 class JSONHandler(Handler):
+    """
+    A class for handling log messages in JSON format.
+
+    This class inherits from the Handler class and implements specific
+    methods for formatting and outputting log messages in JSON files. It
+    supports the creation of new log files based on the current date and
+    allows customization of the log format string. The JSONHandler ensures
+    that log messages are stored in a structured and easily accessible format,
+    making it suitable for further analysis or review. It also includes
+    features for hashing log messages for unique identification and updating
+    the log file if the current date has changed.
+    """
     def __init__(self, name: str, path: str = "logs") -> None:
         """
-        Initializes the FileHandler with the given name, log path, and log
+        Initializes the JSONHandler with the given name, log path, and log
             format string.
 
         Args:
@@ -30,21 +42,17 @@ class JSONHandler(Handler):
 
     def emit(self, record: dict) -> None:
         """
-        Fügt eine Log-Nachricht zum JSON-Objekt hinzu und überprüft, ob das
-            Datum geändert wurde.
-
+        Adds a log message to the JSON object and checks whether the
+            date has been changed.
         Args:
-            record (dict): Ein Wörterbuch, das die Details des Log-Eintrags
-                enthält.
+            record (dict): A dictionary containing the details of the log
+                entry. contains the details of the log entry.
         """
-        # Generieren Sie einen Hash für die Log-Nachricht
-        message_hash = hash(str(record))
-        # Fügen Sie die Log-Nachricht zum JSON-Objekt hinzu
-        self.log_data[str(message_hash)] = record
-        # Überprüfen Sie, ob das Datum geändert wurde und aktualisieren Sie
-        # die Datei entsprechend
+        formatted_message = self._format_message(record)
+        message_hash = hash(str(formatted_message))
+
+        self.log_data[str(message_hash)] = formatted_message
         self._update_file()
-        # Schreiben Sie das JSON-Objekt in die Datei
         self._write_log_data_to_file()
 
     def _write_log_data_to_file(self) -> None:

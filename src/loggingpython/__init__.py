@@ -7,33 +7,54 @@ of your application.
 In the Docs you will find further information about.
 """
 
+import importlib
 
 from .logger import Logger
-from .handler import FileHandler
-from .handler import ConsoleHandler
-from .handler import JSONHandler
-from .handler import SQLHandler
-from .handler import CSVHandler
-from .handler import SysHandler
 
-from .handler import Handler
+from .handler.filehandler import FileHandler
+from .handler.consolehandler import ConsoleHandler
+from .handler.jsonhandler import JSONHandler
+from .handler.sqlhandler import SQLHandler
+from .handler.csvhandler import CSVHandler
+from .handler.syshandler import SysHandler
+
 from .log_levels import LogLevel
+from .sys_procolls import SysProtocolls
 
-
-import importlib
+from .error.server_unreachable_error import ServerUnreachableError
+from .error.server_method_call_error import ServerMethodCallError
+from .error.client_method_call_error import ClientMethodCallError
+from .error.invalid_log_level_error import InvalidLogLevelError
+from .error.invalid_handler_method_error import InvalidHandlerMethodError
+from .error.handler_not_found_error import HandlerNotFoundError
 
 
 __version__ = "1.3.2"
-__all__ = ["Logger",
-           # Hander
-           "Handler",
-           "FileHandler",
-           "ConsoleHandler",
-           "JSONHandler",
-           "SQLHandler",
-           "CSVHandler",
-           # help class
-           "LogLevel"]
+__all__ = [
+    # Bacis
+    "Logger",
+
+    # Hander
+    "Handler",
+    "FileHandler",
+    "ConsoleHandler",
+    "JSONHandler",
+    "SQLHandler",
+    "CSVHandler",
+    "SysHandler",
+
+    # Enum
+    "LogLevel",
+    "SysProtocolls",
+
+    # Error
+    "ServerUnreachableError",
+    "ServerMethodCallError",
+    "ClientMethodCallError",
+    "InvalidLogLevelError",
+    "InvalidHandlerMethodError",
+    "HandlerNotFoundError"
+    ]
 
 __license__ = "MIT"
 
