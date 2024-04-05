@@ -1,4 +1,4 @@
-from loggingpython.consolehandler import ConsoleHandler
+from loggingpython.handler.consolehandler import ConsoleHandler
 from colorama import Fore
 
 

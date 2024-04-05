@@ -1,5 +1,5 @@
 from loggingpython.logger import Logger
-from loggingpython.filehandler import FileHandler
+from loggingpython.handler.filehandler import FileHandler
 
 
 def test_create_logger():
