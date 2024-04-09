@@ -28,4 +28,4 @@ class Handler:
         return "Handler()"
 
     def __str__(self) -> str:
-        return "Handler()"
+        return "Handler with: None"

@@ -62,7 +62,7 @@ class JSONHandler(Handler):
         with open(self.file, 'w') as file:
             file.write(json.dumps(self.log_data, indent=4))
 
-    def _update_file(self):
+    def _update_file(self) -> None:
         """
         Updates the log file if the current date has changed.
         """
@@ -74,7 +74,7 @@ class JSONHandler(Handler):
             self.file = open(file, "a")
             self.log_data: dict[str, str] = {}
 
-    def _close_file(self):
+    def _close_file(self) -> None:
         """
         Closes the current log file.
         """
@@ -150,7 +150,9 @@ class JSONHandler(Handler):
         return values
 
     def __repr__(self) -> str:
-        return f"JSONHandler:{self.name}, {self.path}, {self.logformat_string}"
+        return f"JSONHandler({self.name}, {self.path}, \
+{self.logformat_string})"
 
     def __str__(self) -> str:
-        return f"JSONHandler:{self.name}, {self.path}, {self.logformat_string}"
+        return f"JSONHandler with: {self.name}, {self.path} and \
+{self.logformat_string}"

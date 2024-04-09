@@ -11,6 +11,7 @@ This list contains all external libraries used in the `loggingpython` project.
 - [`pandas`](https://pandas.pydata.org/): For creating and manipulating CSV files.
 - [`sqlite3`](https://docs.python.org/3/library/sqlite3.html): For working with SQLite databases.
 - [`enum`](https://docs.python.org/3/library/enum.html):: For the creation of enumerations.
+- [`socket`](https://docs.python.org/3/library/socket.html): For network communication.
 
 ## Additional libraries
 

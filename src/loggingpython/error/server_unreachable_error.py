@@ -4,6 +4,6 @@ class ServerUnreachableError(Exception):
     This error indicates that the server might be unreachable due to network
     issues, incorrect server address or port, or the server not being active.
     """
-    def __init__(self,
-                 message="Failed to connect to the server."):
+    def __init__(self, servername: str, port: int):
+        message: str = f"Failed to connect to the server: {servername}:{port}"
         super().__init__(message)

@@ -11,15 +11,15 @@ import importlib
 
 from .logger import Logger
 
+from .log_levels import LogLevel
+from .sys_procolls import SysProtocolls
+
 from .handler.filehandler import FileHandler
 from .handler.consolehandler import ConsoleHandler
 from .handler.jsonhandler import JSONHandler
 from .handler.sqlhandler import SQLHandler
 from .handler.csvhandler import CSVHandler
 from .handler.syshandler import SysHandler
-
-from .log_levels import LogLevel
-from .sys_procolls import SysProtocolls
 
 from .error.server_unreachable_error import ServerUnreachableError
 from .error.server_method_call_error import ServerMethodCallError
@@ -29,10 +29,14 @@ from .error.invalid_handler_method_error import InvalidHandlerMethodError
 from .error.handler_not_found_error import HandlerNotFoundError
 
 
-__version__ = "1.3.2"
+__version__ = "1.4.0"
 __all__ = [
     # Bacis
     "Logger",
+
+    # Enum
+    "LogLevel",
+    "SysProtocolls",
 
     # Hander
     "Handler",
@@ -42,10 +46,6 @@ __all__ = [
     "SQLHandler",
     "CSVHandler",
     "SysHandler",
-
-    # Enum
-    "LogLevel",
-    "SysProtocolls",
 
     # Error
     "ServerUnreachableError",
@@ -72,14 +72,20 @@ PyPi: https://pypi.org/project/loggingpython
 GitHub: https://github.com/loggingpython-Community/loggingpython""")
 
 
-def getLogger(name: str = "Root-Logger") -> Logger:
+def getLogger(name: str = "Root-Logger",
+              time_format: str = None,
+              min_loglevel: LogLevel = LogLevel.INFO,
+              max_loglevel: LogLevel = LogLevel.CRITICAL) -> Logger:
     """
         Creates and returns an instance of the logger.
 
         Returns:
             Logger: An instance of the logger.
         """
-    return Logger(name)
+    return Logger(name=name,
+                  time_format=time_format,
+                  min_loglevel=min_loglevel,
+                  max_loglevel=max_loglevel)
 
 
 def getBasicLogger() -> Logger:
@@ -107,10 +113,8 @@ def get_all_handlers() -> dict[str]:
     handlers = {}
     for handler_name in __all__:
         if handler_name.endswith("Handler"):
-            # Adjust the module name to correctly resolve the import path
             module_name = f"{__name__}.handler.{handler_name.lower()}"
             try:
-                # Use importlib.import_module for dynamic import
                 handler_module = importlib.import_module(module_name)
                 handler_class = getattr(handler_module, handler_name)
                 handlers[handler_name] = handler_class

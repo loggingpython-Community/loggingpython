@@ -5,7 +5,7 @@ In this section you will learn how to integrate `loggingpython` into your projec
 ## With pip
 
 For a simple installation via pip, execute the following command:
-``` bash
+```bash
 pip install loggingpython
 ```
 
@@ -15,20 +15,20 @@ To install the latest development of `loggingpython` directly from the GitHub re
 
 1. clone the repository:
 
-``` bash
+```bash
 git clone https://github.com/loggingpython-Community/loggingpython.git
 ```
 
 2. change to the cloned directory:
 
-``` bash
+```bash
 cd loggingpython
 ```
 
 
 3. install the package:
 
-``` bash
+```bash
 pip install .
 ```
 

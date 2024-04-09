@@ -2,8 +2,9 @@ from typing import TextIO
 from colorama import Fore, Style
 import sys
 
-from ..log_levels import LogLevel
 from .handler import Handler
+from ..log_levels import LogLevel
+from ..error.invalid_log_level_error import InvalidLogLevelError
 
 
 class ConsoleHandler(Handler):
@@ -31,9 +32,7 @@ class ConsoleHandler(Handler):
                 logger name, log level and the message itself.
         """
         self.stream: TextIO = stream
-        self._default_logformat_string: str = logformat_string
-
-        self.set_logformat()
+        self.logformat_string: str = logformat_string
 
         self.color_map: dict = {
             LogLevel.DEBUG.name: Fore.GREEN,
@@ -57,23 +56,6 @@ class ConsoleHandler(Handler):
         self.stream.write(color + formatted_message + Style.RESET_ALL + '\n')
         self.stream.flush()
 
-    def set_logformat(self, logformat_string: str = None) -> str:
-        """
-        Sets the formatting string for log messages.
-
-        Args:
-            logformat_string (str, optional): The new formatting string.
-                If None, the default formatting string is used.
-
-        Returns:
-            str: The set formatting string.
-        """
-        if logformat_string is None:
-            self.logformat_string = self._default_logformat_string
-        else:
-            self.logformat_string = logformat_string
-        return self.logformat_string
-
     def set_colors_for_levels(self, color_map: dict) -> None:
         """
         Sets colors for the different log levels.
@@ -84,11 +66,11 @@ class ConsoleHandler(Handler):
         """
         for level in color_map.keys():
             if level not in LogLevel.__members__:
-                raise ValueError(f"Invalid log level: {level}")
+                raise InvalidLogLevelError(level)
 
         self.color_map.update(color_map)
 
-    def _get_color_for_level(self, loglevel: str):
+    def _get_color_for_level(self, loglevel: str) -> str:
         """
         Returns the color for a specific log level.
 
@@ -123,7 +105,7 @@ class ConsoleHandler(Handler):
         return logformat_string % values
 
     def __repr__(self) -> str:
-        return f"ConsoleHandler:{self.name}, {self.logformat_string}"
+        return f"ConsoleHandler({self.name}, {self.logformat_string})"
 
     def __str__(self) -> str:
-        return f"ConsoleHandler:{self.name}, {self.logformat_string}"
+        return f"ConsoleHandler with: {self.name} and {self.logformat_string}"

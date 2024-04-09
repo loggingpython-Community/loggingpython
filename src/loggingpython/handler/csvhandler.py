@@ -126,7 +126,8 @@ class CSVHandler(Handler):
         return formatted_message
 
     def __repr__(self) -> str:
-        return f"CSVHandler:{self.name}, {self.path}, {self.logformat_string}"
+        return f"CSVHandler({self.name}, {self.path}, {self.logformat_string})"
 
     def __str__(self) -> str:
-        return f"CSVHandler:{self.name}, {self.path}, {self.logformat_string}"
+        return f"CSVHandler with: {self.name}, {self.path} and \
+{self.logformat_string}"

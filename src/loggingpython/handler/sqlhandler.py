@@ -84,7 +84,7 @@ iso_8601_time, loggername)
             )
             conn.commit()
 
-    def _update_file(self):
+    def _update_file(self) -> None:
         """
         Updates the log file if the current date has changed.
         """
@@ -99,7 +99,7 @@ iso_8601_time, loggername)
             # Create the table in the new db file if it does not yet exist
             self._creat_db()
 
-    def _close_file(self):
+    def _close_file(self) -> None:
         """
         Closes the current log file.
         """
@@ -156,7 +156,7 @@ iso_8601_time, loggername)
         return values
 
     def __repr__(self) -> str:
-        return f"SQLHandler:{self.name}, {self.path}"
+        return f"SQLHandler({self.name}, {self.path})"
 
     def __str__(self) -> str:
-        return f"SQLHandler:{self.name}, {self.path}"
+        return f"SQLHandler with:{self.name} and {self.path}"

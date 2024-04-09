@@ -52,7 +52,7 @@ class FileHandler(Handler):
         self.file.write(formatted_message + "\n")
         self.file.flush()
 
-    def _update_file(self):
+    def _update_file(self) -> None:
         """
         Updates the log file if the current date has changed.
         """
@@ -63,7 +63,7 @@ class FileHandler(Handler):
             filename = f"{self.logpath}/{self.name}_{self._current_date}.log"
             self.file = open(filename, "a")
 
-    def _close_file(self):
+    def _close_file(self) -> None:
         """
         Closes the current log file.
         """
@@ -121,7 +121,9 @@ class FileHandler(Handler):
         return logformat_string % values
 
     def __repr__(self) -> str:
-        return f"FileHandler:{self.name}, {self.path}, {self.logformat_string}"
+        return f"FileHandler({self.name}, {self.path}, \
+{self.logformat_string})"
 
     def __str__(self) -> str:
-        return f"FileHandler:{self.name}, {self.path}, {self.logformat_string}"
+        return f"FileHandler with: {self.name}, {self.path} and \
+{self.logformat_string}"

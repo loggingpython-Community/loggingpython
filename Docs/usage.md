@@ -12,7 +12,10 @@ import loggingpython as lp
 logger = lp.getBasicLogger()
 ```
 
-``` python
+## Adding Handlers
+You can add various handlers to your logger to customize how log messages are handled. Here's how to add a `FileHandler`, `ConsoleHandler`, `JSONHandler`, `SQLHandler`, and `CSVHandler`:
+
+```python
 # Create a logger
 logger = lp.getLogger()
 
@@ -24,19 +27,27 @@ logger.addHandler(filehandler)
 consolehandler = lp.ConsoleHandler()
 logger.addHandler(consolehandler)
 
-# Creat a JSONhandler
+# Create a JSONHandler
 jsonhandler = lp.JSONHandler(logger.name)
 logger.addHandler(jsonhandler)
 
-# Creat a SQLHandler
+# Create a SQLHandler
 sqlhandler = lp.SQLHandler(logger.name)
 logger.addHandler(sqlhandler)
 
-# Creat a CSVHandler
+# Create a CSVHandler
 csvhandler = lp.CSVHandler(logger.name)
 logger.addHandler(csvhandler)
+
+# Create a SysHandler for a TCP client
+sys_handler = SysHandler()
+logger.addHandler(sys_handler)
+
+# Create a SysHandler for a TCP server
+server_handler = SysHandler(client=False)
 ```
 
+## Logging Messages
 Now you can use the logger to generate different types of log messages:
 
 ``` python
@@ -47,6 +58,22 @@ logger.warning("This is a warning.")
 logger.error("This is an error.")
 logger.critical("This is a critical error.")
 ```
+
+## Handling Exceptions
+The `loggingpython` package also provides error classes for handling exceptions. Here's an example of how to use the `InvalidLogLevelError`:
+```python
+from loggingpython.error.invalid_log_level_error import InvalidLogLevelError
+
+# Example usage
+try:
+    # Code that might raise an InvalidLogLevelError
+    pass
+except InvalidLogLevelError as e:
+    print(f"An error occurred: {e}")
+```
+
+## Summary
+The `loggingpython` package offers a flexible and extensible logging system for Python applications. By providing a variety of handlers and error classes, it allows developers to easily integrate logging functionality into their projects, tailoring the logging system to meet specific requirements.
 
 ## Further examples
 

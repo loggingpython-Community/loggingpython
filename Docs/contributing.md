@@ -10,8 +10,7 @@ We welcome your contributions to the development of `loggingpython`. If you have
 4. create a pull request with your changes.
 
 ## Code style
-
-Please adhere to the PEP 8 code style.
+Please adhere to the [PEP 8](https://peps.python.org/pep-0008/) code style.
 
 ## License
 
