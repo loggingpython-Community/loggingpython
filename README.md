@@ -53,7 +53,7 @@ We welcome contributions to `loggingpython`. If you have feedback, suggestions, 
 
 ## Further Resources
 
-- [Documentation](https://github.com/loggingpython-Community/loggingpython/docs)
+- [Documentation](https://github.com/loggingpython-Community/loggingpython/wiki)
 - [GitHub Repository](https://github.com/loggingpython-Community/loggingpython)
 - [Issue Tracker](https://github.com/loggingpython-Community/loggingpython/issues)
 - [Changelog](https://github.com/loggingpython-Community/loggingpython/blob/main/CHANGELOG.md)
