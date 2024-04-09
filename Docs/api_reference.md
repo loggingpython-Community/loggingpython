@@ -77,7 +77,7 @@ Through the use of these components, developers can easily integrate a robust lo
 ---
 ## Further information
 
-For detailed information on the classes and functions of `loggingpython` please visit the [Documentation](https://github.com/loggingpython-Community/loggingpython/docs).
+For detailed information on the classes and functions of `loggingpython` please visit the [Documentation](https://github.com/loggingpython-Community/loggingpython/wiki).
 
 ---
 
