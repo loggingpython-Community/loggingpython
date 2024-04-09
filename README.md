@@ -18,7 +18,9 @@ pip install loggingpython
 Alternatively, you can install the latest development version directly from GitHub:
 
 ```bash
-git clone https://github.com/loggingpython-Community/loggingpython.git cd loggingpython pip install .
+git clone https://github.com/loggingpython-Community/loggingpython.git
+cd loggingpython
+pip install .
 ```
 
 ## Usage
