@@ -1,0 +1,72 @@
+ # .readthedocs.yaml
+# Version der Read the Docs Konfiguration
+Version: 2
+# Build-System
+mkdocs:
+ Konfiguration: mkdocs.yml
+# Dokumentationsformat
+Formate:
+ - markdown
+# Dokumentationsversionen
+Versionen:
+ - name: neueste
+    Bezeichner: master
+    is_default: wahr
+ - name: stabil
+    Bezeichner: stable
+ - name: v1.0
+    Bezeichner: v1.0
+# Build-Konfiguration
+python:
+ version: 3.8
+ installieren:
+    - Anforderungen: docs/requirements.txt
+# Umgebungsvariablen
+env:
+ global:
+    - MY_GLOBAL_VAR=my_value
+ matrix:
+    - MY_MATRIX_VAR=mein_Wert
+# Build-Schritte
+bauen:
+ before:
+    - echo "Dies wird ausgeführt, bevor der Build beginnt."
+ after:
+    - echo "Dies wird nach Beendigung des Builds ausgeführt."
+# Kontext-spezifische Konfigurationen
+Kontexte:
+ production:
+    python:
+      Version: 3.8
+ entwicklung:
+    python:
+      Version: 3.7
+# Erweiterte Konfigurationen
+conda:
+ environment: docs/environment.yml
+# PDF-Export
+pdf:
+ aktiviert: true
+ latex_engine: xelatex
+ latex_engine_path: /usr/bin/xelatex
+ latex_theme: howto
+ latex_options:
+    -interaction=nonstopmode
+    -halt-auf-fehler
+ latex_documents:
+    - master: index.tex
+      Thema: howto
+      toctree_only: false
+# HTML-Export
+html:
+ Thema: readthedocs
+ extra_extensions:
+    - sphinxcontrib.spelling
+ extra_kontext:
+    extra_footer: "Dies ist eine zusätzliche Fußzeile."
+# Fehlerbehandlung
+fail_on_warning: false
+ 
+ 
+
+Übersetzt mit DeepL.com (kostenlose Version)
