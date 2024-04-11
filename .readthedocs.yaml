@@ -1,68 +1,81 @@
 # .readthedocs.yaml
-# Version of the Read the Docs configuration
-Version: 2
-# Build system
+
+# Version der Read the Docs Konfiguration
+version: 2
+
+# Build-System
 mkdocs:
- Configuration: mkdocs.yml
+ configuration: mkdocs.yml
+
+ 
 # Documentation format
-Formats:
+ formats:
  - markdown
+
 # Documentation versions
 versions:
  - name: latest
- identifier: master
- is_default: true
+    identifier: master
+    is_default: true
  - name: stable
- identifier: stable
+    identifier: stable
  - name: v1.0
- identifier: v1.0
+    identifier: v1.0
+
 # Build configuration
 python:
  version: 3.8
  install:
- - Requirements: docs/requirements.txt
+    - requirements: docs/requirements.txt
+
 # Environment variables
-env:
+ env:
  global:
- - MY_GLOBAL_VAR=my_value
+    - MY_GLOBAL_VAR=my_value
  matrix:
- - MY_MATRIX_VAR=my_value
+    - MY_MATRIX_VAR=my_value
+
 # Build steps
 build:
  before:
- - echo "This will be executed before the build starts."
+    - echo "This will run before the build starts."
  after:
- - echo "This will be executed after the build finishes."
+    - echo "This will run after the build finishes."
+
 # Context-specific configurations
-Contexts:
+contexts:
  production:
- python:
- Version: 3.8
+    python:
+      version: 3.8
  development:
- python:
- Version: 3.7
+    python:
+      version: 3.7
+
 # Advanced configurations
 conda:
  environment: docs/environment.yml
+
 # PDF export
 pdf:
- activated: true
+ enabled: true
  latex_engine: xelatex
  latex_engine_path: /usr/bin/xelatex
  latex_theme: howto
  latex_options:
- -interaction=nonstopmode
- -hold-on-error
+    - -interaction=nonstopmode
+    - -halt-on-error
  latex_documents:
- - master: index.tex
- Topic: howto
- toctree_only: false
-# HTML export
+    - master: index.tex
+      theme: howto
+      toctree_only: false
+
+# HTML wxport
 html:
- Topic: readthedocs
+ theme: readthedocs
  extra_extensions:
- - sphinxcontrib.spelling
+    - sphinxcontrib.spelling
  extra_context:
- extra_footer: "This is an additional footer."
+    extra_footer: "This is an extra footer."
+
 # Error handling
 fail_on_warning: false
