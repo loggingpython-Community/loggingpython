@@ -1,72 +1,68 @@
- # .readthedocs.yaml
-# Version der Read the Docs Konfiguration
+# .readthedocs.yaml
+# Version of the Read the Docs configuration
 Version: 2
-# Build-System
+# Build system
 mkdocs:
- Konfiguration: mkdocs.yml
-# Dokumentationsformat
-Formate:
+ Configuration: mkdocs.yml
+# Documentation format
+Formats:
  - markdown
-# Dokumentationsversionen
-Versionen:
- - name: neueste
-    Bezeichner: master
-    is_default: wahr
- - name: stabil
-    Bezeichner: stable
+# Documentation versions
+versions:
+ - name: latest
+ identifier: master
+ is_default: true
+ - name: stable
+ identifier: stable
  - name: v1.0
-    Bezeichner: v1.0
-# Build-Konfiguration
+ identifier: v1.0
+# Build configuration
 python:
  version: 3.8
- installieren:
-    - Anforderungen: docs/requirements.txt
-# Umgebungsvariablen
+ install:
+ - Requirements: docs/requirements.txt
+# Environment variables
 env:
  global:
-    - MY_GLOBAL_VAR=my_value
+ - MY_GLOBAL_VAR=my_value
  matrix:
-    - MY_MATRIX_VAR=mein_Wert
-# Build-Schritte
-bauen:
+ - MY_MATRIX_VAR=my_value
+# Build steps
+build:
  before:
-    - echo "Dies wird ausgeführt, bevor der Build beginnt."
+ - echo "This will be executed before the build starts."
  after:
-    - echo "Dies wird nach Beendigung des Builds ausgeführt."
-# Kontext-spezifische Konfigurationen
-Kontexte:
+ - echo "This will be executed after the build finishes."
+# Context-specific configurations
+Contexts:
  production:
-    python:
-      Version: 3.8
- entwicklung:
-    python:
-      Version: 3.7
-# Erweiterte Konfigurationen
+ python:
+ Version: 3.8
+ development:
+ python:
+ Version: 3.7
+# Advanced configurations
 conda:
  environment: docs/environment.yml
-# PDF-Export
+# PDF export
 pdf:
- aktiviert: true
+ activated: true
  latex_engine: xelatex
  latex_engine_path: /usr/bin/xelatex
  latex_theme: howto
  latex_options:
-    -interaction=nonstopmode
-    -halt-auf-fehler
+ -interaction=nonstopmode
+ -hold-on-error
  latex_documents:
-    - master: index.tex
-      Thema: howto
-      toctree_only: false
-# HTML-Export
+ - master: index.tex
+ Topic: howto
+ toctree_only: false
+# HTML export
 html:
- Thema: readthedocs
+ Topic: readthedocs
  extra_extensions:
-    - sphinxcontrib.spelling
- extra_kontext:
-    extra_footer: "Dies ist eine zusätzliche Fußzeile."
-# Fehlerbehandlung
+ - sphinxcontrib.spelling
+ extra_context:
+ extra_footer: "This is an additional footer."
+# Error handling
 fail_on_warning: false
- 
- 
-
-Übersetzt mit DeepL.com (kostenlose Version)
