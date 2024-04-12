@@ -19,14 +19,10 @@ versions:
     is_default: true
  - name: stable
     identifier: stable
- - name: v1.0
-    identifier: v1.0
 
 # Build configuration
 python:
  version: 3.8
- install:
-    - requirements: docs/requirements.txt
 
 # Environment variables
  env:
