@@ -15,7 +15,7 @@ mkdocs:
 # Documentation versions
 versions:
  - name: latest
-    identifier: master
+    identifier: latest
     is_default: true
  - name: stable
     identifier: stable
