@@ -16,7 +16,6 @@ pip install loggingpython
 ```
 
 Alternatively, you can install the latest development version directly from GitHub:
-
 ```bash
 git clone https://github.com/loggingpython-Community/loggingpython.git
 cd loggingpython
@@ -34,7 +33,6 @@ logger = lp.getBasicLogger()
 ```
 
 You can add various handlers to your logger to customize how log messages are handled:
-
 ```python
 # Log messages at different levels
 logger.debug("This is a debug message.")
@@ -43,6 +41,7 @@ logger.warning("This is a warning.")
 logger.error("This is an error.")
 logger.critical("This is a critical error.")
 ```
+
 ## Contributing
 
 We welcome contributions to `loggingpython`. If you have feedback, suggestions, or would like to contribute, please visit our [GitHub repository](https://github.com/loggingpython-Community/loggingpython).
