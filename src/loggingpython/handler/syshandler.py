@@ -3,7 +3,6 @@ import json
 from functools import partial
 
 from .handler import Handler
-from ..logger import Logger
 from ..sys_procolls import SysProtocolls
 from ..error.server_unreachable_error import ServerUnreachableError
 from ..error.server_method_call_error import ServerMethodCallError
@@ -31,7 +30,7 @@ class SysHandler(Handler):
                  port: int = 8080,
                  logformat_string: str = "%(asctime)s: [%(client_name)s] \
 [%(client_addr)i] [%(loggername)s] [%(loglevel)s]: %(message)s",
-                 logger: Logger = None) -> None:
+                 logger=None) -> None:
         """
         Initializes a SysHandler instance.
 
@@ -58,20 +57,20 @@ class SysHandler(Handler):
         self.protocoll = protocoll
         self.server_name = server_name
         self.port = port
-        self.syssocket = socket.socket(socket.AF_INET,
-                                       self.protocoll.value)
+        self._syssocket = socket.socket(socket.AF_INET,
+                                        self.protocoll.value)
         self.server_addr = (self.server_name, self.port)
         self.logformat_string = logformat_string
 
         if self.protocoll == SysProtocolls.TCP:
             self._connect_client = partial(self._connect_client_tcp)
-            self._start_server = partial(self._start_server_tcp)
+            self._run_server = partial(self._run_server_tcp)
             self.handle_client_connection = partial(
                 self._handle_client_connection_tcp)
             self.emit = partial(self._emit_tcp)
         elif self.protocoll == SysProtocolls.UDP:
             self._connect_client = partial(self._connect_client_udp)
-            self._client_onlystart_server = partial(self._start_server_udp)
+            self._run_server = partial(self._run_server_udp)
             self.handle_client_connection = partial(
                 self._handle_client_connection_udp)
             self.emit = partial(self._emit_udp)
@@ -79,8 +78,8 @@ class SysHandler(Handler):
         if self.client:
             self._connect_client()
         else:
-            self._start_server()
-            self.logger = logger
+            self._logger = logger
+            self._run_server()
 
     @staticmethod
     def _client_only(func):
@@ -134,7 +133,7 @@ class SysHandler(Handler):
         using TCP.
         """
         try:
-            self.syssocket.connect(self.server_addr)
+            self._syssocket.connect(self.server_addr)
         except ConnectionRefusedError:
             raise ServerUnreachableError(servername=self.server_name,
                                          port=self.port)
@@ -153,38 +152,40 @@ class SysHandler(Handler):
         ...
 
     @_client_only
-    def _start_server(self) -> None:
+    def _run_server(self) -> None:
         """
         Starts a server that listens for incoming connections.
 
-        This method is dynamically set to either `_start_server_tcp` or
-        `_start_server_udp` based on the protocol specified during the
+        This method is dynamically set to either `_run_server_tcp` or
+        `_run_server_udp` based on the protocol specified during the
         initialization of the SysHandler instance.
         """
         ...
 
     @_server_only
-    def _start_server_tcp(self) -> None:
+    def _run_server_tcp(self) -> None:
         """
         Starts a TCP server that listens for incoming connections.
 
         This method binds the server socket to the specified address and port,
         listens for incoming TCP connections, and accepts them.
         """
-        self.syssocket.bind(self.server_addr)
-        self.syssocket.listen(1)
-        print(f"TCP server listens in {self.server_addr}")
+        self._logger.info("Server is running")
+        self._syssocket.bind(self.server_addr)
+        self._syssocket.listen(1)
+        print(f"TCP server listens to {self.server_addr}")
 
     @_server_only
-    def _start_server_udp(self) -> None:
+    def _run_server_udp(self) -> None:
         """
         Starts a UDP server that listens for incoming connections.
 
         This method binds the server socket to the specified address and port,
         and listens for incoming UDP messages.
         """
-        self.syssocket.bind(self.server_addr)
-        print(f"UCP server listens in {self.server_addr}")
+        self._logger.info("Server is running")
+        self._syssocket.bind(self.server_addr)
+        print(f"UDP server listens to {self.server_addr}")
 
     @_client_only
     def emit(self, record: dict[str]) -> None:
@@ -213,14 +214,15 @@ class SysHandler(Handler):
             record (dict): A dictionary containing the log message details.
         """
         formatted_message = self._format_message(record)
+        formatted_message["client_name"] = self.name
 
         message_str = json.dumps(formatted_message)
 
         message_bytes = message_str.encode('utf-8')
 
-        self.syssocket.sendall(message_bytes)
+        self._syssocket.sendall(message_bytes)
 
-        data = self.syssocket.recv(1024)
+        data = self._syssocket.recv(1024)
         print(f"Received response: {data} from server")
 
     @_client_only
@@ -236,11 +238,12 @@ class SysHandler(Handler):
             record (dict): A dictionary containing the log message details.
         """
         formatted_message = self._format_message(record)
+        formatted_message["client_name"] = self.name
 
         message_str = json.dumps(formatted_message)
 
         message_bytes = message_str.encode('utf-8')
-        self.syssocket.sendto(message_bytes, self.server_addr)
+        self._syssocket.sendto(message_bytes, self.server_addr)
 
     @_server_only
     def _handle_client_connection(self) -> None:
@@ -260,11 +263,11 @@ class SysHandler(Handler):
         Handles incoming TCP connections from clients.
 
         This method accepts incoming TCP connections, receives log messages,
-        decodes them, and logs the received log messages using `self.logger` if
-        available. It also sends a confirmation message back to the client.
+        decodes them, and logs the received log messages using `self._logger`
+        if available. It also sends a confirmation message back to the client.
         """
         while True:
-            client_socket, addr = self.syssocket.accept()
+            client_socket, addr = self._syssocket.accept()
             print(f"Connection from {addr} accepted")
 
             while True:
@@ -280,11 +283,9 @@ class SysHandler(Handler):
                 logformat_string = self.logformat_string
                 log_message = logformat_string % received_dict
 
-                self.logger.info(log_message)
+                self._logger.info(log_message)
 
                 client_socket.sendall(b"Receive message")
-
-            client_socket.close()
 
     @_server_only
     def _handle_client_connection_udp(self) -> None:
@@ -292,11 +293,11 @@ class SysHandler(Handler):
         Handles incoming UDP connections from clients.
 
         This method listens for incoming UDP messages, decodes them, and logs
-        the received log messages using `self.logger` if available. It also
+        the received log messages using `self._logger` if available. It also
         sends a confirmation message back to the client.
         """
         while True:
-            data, addr = self.syssocket.recvfrom(1024)
+            data, addr = self._syssocket.recvfrom(1024)
             received_str = data.decode('utf-8')
             received_dict = json.loads(received_str)
 
@@ -306,30 +307,9 @@ class SysHandler(Handler):
             logformat_string = self.logformat_string
             log_message = logformat_string % received_dict
 
-            self.logger.info(log_message)
+            self._logger.info(log_message)
 
-            self.syssocket.sendto(b"Receive message", addr)
-
-    def _format_message(self, record: dict[str]) -> dict[str]:
-        """
-        Formats a log message based on the provided log data.
-
-        Args:
-            record (dict): A dictionary containing the log message details.
-
-        Returns:
-            str: The formatted log message.
-        """
-        values = {
-            "client_name": self.name,
-            "loggername": record.get("loggername", ""),
-            "iso_8601_time": record.get("iso_8601_time", ""),
-            "asctime": record.get("asctime", ""),
-            "loglevel": record.get("loglevel", ""),
-            "message": record.get("message", ""),
-        }
-
-        return values
+            self._syssocket.sendto(b"Receive message", addr)
 
     def __repr__(self) -> str:
         return f"SysHandler({self.client}, {self.protocoll}, \

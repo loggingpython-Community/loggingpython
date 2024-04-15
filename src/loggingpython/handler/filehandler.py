@@ -47,7 +47,9 @@ class FileHandler(Handler):
         Args:
             record (dict): A dictionary containing the log record details.
         """
-        formatted_message = self._format_message(record)
+        formatted_message_values = self._format_message(record)
+        formatted_message = self.logformat_string % formatted_message_values
+
         self._update_file()
         self.file.write(formatted_message + "\n")
         self.file.flush()
@@ -98,27 +100,6 @@ class FileHandler(Handler):
             str: The current date.
         """
         return datetime.now().strftime("%Y-%m-%d")
-
-    def _format_message(self, record: dict) -> str:
-        """
-        Formats a log message based on the provided log data.
-
-        Args:
-            record (dict): A dictionary containing the log message details.
-
-        Returns:
-            str: The formatted log message.
-        """
-        values = {
-            "loggername": record.get("loggername", ""),
-            "iso_8601_time": record.get("iso_8601_time", ""),
-            "asctime": record.get("asctime", ""),
-            "loglevel": record.get("loglevel", ""),
-            "message": record.get("message", ""),
-        }
-
-        logformat_string = self.logformat_string
-        return logformat_string % values
 
     def __repr__(self) -> str:
         return f"FileHandler({self.name}, {self.path}, \

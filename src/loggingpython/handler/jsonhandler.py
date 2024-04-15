@@ -37,7 +37,6 @@ class JSONHandler(Handler):
         self._current_date: str = datetime.now().strftime("%Y-%m-%d")
         self.file: str = f"{self.path}/{self.name}_{self._current_date}.json"
         self._mk_logfile(self.file)
-        # Initialisieren Sie das JSON-Objekt hier
         self.log_data: dict[str, str] = {}
 
     def emit(self, record: dict) -> None:
@@ -48,7 +47,8 @@ class JSONHandler(Handler):
             record (dict): A dictionary containing the details of the log
                 entry. contains the details of the log entry.
         """
-        formatted_message = self._format_message(record)
+        formatted_message_values = self._format_message(record)
+        formatted_message = self._format_in_json(formatted_message_values)
         message_hash = hash(str(formatted_message))
 
         self.log_data[str(message_hash)] = formatted_message
@@ -128,7 +128,7 @@ class JSONHandler(Handler):
             "message": record.get("message", ""),
         }
 
-        return self._format_in_json(values)
+        return values
 
     def _format_in_json(self, record: dict) -> dict:
         """

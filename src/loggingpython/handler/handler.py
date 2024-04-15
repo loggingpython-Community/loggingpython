@@ -24,6 +24,26 @@ class Handler:
         """
         raise NotImplementedError("Subclasses must implement this!")
 
+    def _format_message(self, record: dict) -> str:
+        """
+        Formats a log message based on the transferred log data set.
+
+        Args:
+            record (dict): A dictionary with the details of the log message.
+
+        Returns:
+            str: The formatted log message.
+        """
+        values = {
+            "loggername": record.get("loggername", ""),
+            "iso_8601_time": record.get("iso_8601_time", ""),
+            "asctime": record.get("asctime", ""),
+            "loglevel": record.get("loglevel", ""),
+            "message": record.get("message", ""),
+        }
+
+        return values
+
     def __repr__(self) -> str:
         return "Handler()"
 

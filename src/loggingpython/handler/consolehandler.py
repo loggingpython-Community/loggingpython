@@ -51,7 +51,10 @@ class ConsoleHandler(Handler):
             record (dict): A dictionary with the details of the log message,
                 including timestamp, logger name, log level and message.
         """
-        formatted_message = self._format_message(record)
+
+        formatted_message_values = self._format_message(record)
+        formatted_message = self.logformat_string % formatted_message_values
+
         color = self._get_color_for_level(record["loglevel"])
         self.stream.write(color + formatted_message + Style.RESET_ALL + '\n')
         self.stream.flush()
@@ -82,27 +85,6 @@ class ConsoleHandler(Handler):
             str: The color for the given log level.
         """
         return self.color_map.get(loglevel, Fore.WHITE)
-
-    def _format_message(self, record: dict) -> str:
-        """
-        Formats a log message based on the transferred log data set.
-
-        Args:
-            record (dict): A dictionary with the details of the log message.
-
-        Returns:
-            str: The formatted log message.
-        """
-        values = {
-            "loggername": record.get("loggername", ""),
-            "iso_8601_time": record.get("iso_8601_time", ""),
-            "asctime": record.get("asctime", ""),
-            "loglevel": record.get("loglevel", ""),
-            "message": record.get("message", ""),
-        }
-
-        logformat_string = self.logformat_string
-        return logformat_string % values
 
     def __repr__(self) -> str:
         return f"ConsoleHandler({self.name}, {self.logformat_string})"
