@@ -74,6 +74,7 @@ The `handler/` module provides a range of handler classes, such as `FileHandler`
 The `error/` module contains error classes that represent specific error types, such as `ServerUnreachableError`, `ServerMethodCallError`, `ClientMethodCallError`, `InvalidLogLevelError`, `InvalidHandlerMethodError`, and `HandlerNotFoundError`. These classes are essential for handling exceptions within the logging system, ensuring that errors are caught and managed appropriately.
 
 Through the use of these components, developers can easily integrate a robust logging system into their Python applications, tailoring the logging functionality to meet the specific requirements of their projects. The package's modular design and clear documentation make it a versatile and user-friendly solution for logging needs in Python applications.
+
 ---
 ## Further information
 

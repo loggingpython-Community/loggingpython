@@ -53,7 +53,7 @@ In this example, `ConsoleHandler` inherits from Handler and provides its own imp
 
 ## Summary
 The `Handler` class in `handler.py` serves as the foundation for all handlers in the `loggingpytho`n package. By defining a common interface, it ensures that all handlers can be used interchangeably, providing flexibility and consistency in the logging system. Subclasses of `Handler` must implement the `emit` method to provide specific handling behavior for log messages.
-
+ 
 ---
 
 ## License
