@@ -64,24 +64,25 @@ def hello_from_loggingpython() -> None:
     Outputs a welcome message containing information about the
     loggingpython community.
     """
-    print(f"""Hello from the loggingpython-community.
+    print(f"""
+Hello from the loggingpython-community.
 We also use other libs, for a list of all libs look here: \
 https://github.com/loggingpython-Community/loggingpython/wiki/Lib-List
 Version: {__version__}
-PyPi: https://pypi.org/project/loggingpython
-GitHub: https://github.com/loggingpython-Community/loggingpython""")
+GitHub: https://github.com/loggingpython-Community/loggingpython
+""")
 
 
 def getLogger(name: str = "Root-Logger",
               time_format: str = None,
-              min_loglevel: LogLevel = LogLevel.INFO,
-              max_loglevel: LogLevel = LogLevel.CRITICAL) -> Logger:
+              min_loglevel: LogLevel = None,
+              max_loglevel: LogLevel = None) -> Logger:
     """
-        Creates and returns an instance of the logger.
+    Creates and returns an instance of the logger.
 
-        Returns:
-            Logger: An instance of the logger.
-        """
+    Returns:
+        Logger: An instance of the logger.
+    """
     return Logger(name=name,
                   time_format=time_format,
                   min_loglevel=min_loglevel,

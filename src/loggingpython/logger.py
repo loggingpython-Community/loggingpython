@@ -433,3 +433,11 @@ BaseException")
             except except_type as e:
                 self.critical(f"{func.__name__} failed with error: {str(e)}")
         return wrapper
+
+    def __repr__(self) -> str:
+        return f"Logger({self.name}, {self.time_format}, {self.min_loglevel}, \
+{self.max_loglevel})"
+
+    def __str__(self) -> str:
+        return f"Logger with: {self.name}, {self.min_loglevel} and \
+{self.max_loglevel}"
