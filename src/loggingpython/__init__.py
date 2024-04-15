@@ -29,7 +29,7 @@ from .error.invalid_handler_method_error import InvalidHandlerMethodError
 from .error.handler_not_found_error import HandlerNotFoundError
 
 
-__version__ = "1.4.0"
+__version__ = "1.4.1"
 __all__ = [
     # Bacis
     "Logger",
