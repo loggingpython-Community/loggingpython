@@ -1,6 +1,6 @@
 # loggingpython
 
-`loggingpython` is a Python package that provides a simple and extensible way to integrate logging into your applications. The package starts with a basic logger and can be extended with additional functions to meet the requirements of your application.
+`loggingpython` is a Python library that provides a simple and extensible way to integrate logging into Python applications. In contrast to the standard logging library, `loggingpython` offers a completely independent implementation of handlers and loggers that have been specially developed for the requirements of modern applications.
 
 ## Features
 
@@ -22,7 +22,7 @@ cd loggingpython
 pip install .
 ```
 
-## Usage
+## Quick start
 
 To use `loggingpython`, you first need to import the package and create a logger:
 ```python
