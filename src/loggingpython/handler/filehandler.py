@@ -1,5 +1,7 @@
 import os
+from datetime import timedelta
 from datetime import datetime
+
 
 from .handler import Handler
 
@@ -15,9 +17,13 @@ class FileHandler(Handler):
     string. The FileHandler ensures that log messages are stored persistently
     and can be reviewed later for debugging or auditing purposes.
     """
-    def __init__(self, name: str, path: str = "logs",
+    def __init__(self,
+                 name: str,
+                 path: str = "logs",
                  logformat_string: str = "%(asctime)s: [%(loggername)s]: \
-[%(loglevel)s]: %(message)s") -> None:
+[%(loglevel)s]: %(message)s",
+                 new_file_after: timedelta = timedelta(days=1)
+                 ) -> None:
         """
         Initializes the FileHandler with the given name, log path, and log
             format string.
@@ -39,6 +45,8 @@ class FileHandler(Handler):
         self.file = open(self.file, "a")
 
         self.logformat_string: str = logformat_string
+        self.new_file_after = new_file_after
+        self.last_log_time: datetime = datetime.now()
 
     def emit(self, record: dict) -> None:
         """
@@ -53,17 +61,19 @@ class FileHandler(Handler):
         self._update_file()
         self.file.write(formatted_message + "\n")
         self.file.flush()
+        self.last_log_time = datetime.now()
 
     def _update_file(self) -> None:
         """
         Updates the log file if the current date has changed.
         """
         current_date = datetime.now().strftime("%Y-%m-%d")
-        if current_date != self._current_date:
-            self.current_date = current_date
+        if (datetime.now() - self.last_log_time) > self.new_file_after:
+            self._current_date = current_date
             self._close_file()
-            filename = f"{self.logpath}/{self.name}_{self._current_date}.log"
+            filename = f"{self.path}/{self.name}_{self._current_date}.log"
             self.file = open(filename, "a")
+            self.last_log_time = datetime.now()
 
     def _close_file(self) -> None:
         """

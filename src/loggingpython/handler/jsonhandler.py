@@ -18,7 +18,9 @@ class JSONHandler(Handler):
     features for hashing log messages for unique identification and updating
     the log file if the current date has changed.
     """
-    def __init__(self, name: str, path: str = "logs") -> None:
+    def __init__(self,
+                 name: str,
+                 path: str = "logs") -> None:
         """
         Initializes the JSONHandler with the given name, log path, and log
             format string.

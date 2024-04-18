@@ -16,7 +16,9 @@ class CSVHandler(Handler):
     that log messages are stored in a structured and easily accessible format,
     making it suitable for further analysis or review.
     """
-    def __init__(self, name: str, path: str = "logs",
+    def __init__(self,
+                 name: str,
+                 path: str = "logs",
                  logformat_string: str = "%(asctime)s: [%(loggername)s]: \
 [%(loglevel)s]: %(message)s") -> None:
         """

@@ -17,7 +17,8 @@ class ConsoleHandler(Handler):
     severity and allows customization of the formatting string.
     """
 
-    def __init__(self, stream: TextIO = sys.stdout,
+    def __init__(self,
+                 stream: TextIO = sys.stdout,
                  logformat_string: str = "%(asctime)s: [%(loggername)s]: \
 [%(loglevel)s]: %(message)s") -> None:
         """

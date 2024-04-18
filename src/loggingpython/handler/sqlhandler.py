@@ -18,7 +18,9 @@ class SQLHandler(Handler):
     features for updating the log database if the current date has changed and
     for creating the necessary database structure.
     """
-    def __init__(self, name: str, path: str = "logs") -> None:
+    def __init__(self,
+                 name: str,
+                 path: str = "logs") -> None:
         """
         Initializes the SQLHandler with the given name, log path, and log
             format string.
