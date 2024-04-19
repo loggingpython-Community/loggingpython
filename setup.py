@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='loggingpython',
-    version='1.4.1',
+    version='1.4.2',
     description='Loggingpython is a Python package that provides a simple and\
  extensible way to integrate logging into your applications. The package\
  starts with a simple logger and can be extended with additional functions to\
