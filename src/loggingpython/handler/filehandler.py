@@ -45,8 +45,6 @@ class FileHandler(Handler):
         self.file = open(self.file, "a")
 
         self.logformat_string: str = logformat_string
-        self.new_file_after = new_file_after
-        self.last_log_time: datetime = datetime.now()
 
     def emit(self, record: dict) -> None:
         """
@@ -61,7 +59,17 @@ class FileHandler(Handler):
         self._update_file()
         self.file.write(formatted_message + "\n")
         self.file.flush()
-        self.last_log_time = datetime.now()
+
+    def _update_file(self) -> None:
+        """
+        Updates the log file if the current date has changed.
+        """
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        if current_date != self._current_date:
+            self.current_date = current_date
+            self._close_file()
+            filename = f"{self.logpath}/{self.name}_{self._current_date}.log"
+            self.file = open(filename, "a")
 
     def _update_file(self) -> None:
         """
