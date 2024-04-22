@@ -1,4 +1,4 @@
-class ClientMethodCallError(Exception):
+class ClientMethodCallError_from_loggingpython(Exception):
     """
     Raised when a method intended for the client is called on the server.
     This error indicates that a method that should only be executed by the
