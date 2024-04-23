@@ -1,7 +1,7 @@
 import unittest
 from socket import SOCK_STREAM, SOCK_DGRAM
 
-from loggingpython.sys_procolls import SysProtocolls
+from loggingpython.sys_protocolls import SysProtocolls
 
 
 class TestSysProtocolls(unittest.TestCase):
