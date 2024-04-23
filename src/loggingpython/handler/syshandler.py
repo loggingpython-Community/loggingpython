@@ -3,7 +3,7 @@ import json
 from functools import partial
 
 from .handler import Handler
-from ..sys_procolls import SysProtocolls
+from ..sys_protocolls import SysProtocolls
 from ..error.server_unreachable_error import ServerUnreachableError
 from ..error.server_method_call_error import ServerMethodCallError
 from ..error.client_method_call_error import ClientMethodCallError

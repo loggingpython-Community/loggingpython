@@ -82,7 +82,7 @@ class Logger:
         """
 
         if loglevel not in self._SUPPORTED_LEVELS:
-            raise InvalidLogLevelError()
+            raise InvalidLogLevelError(loglevel)
 
     def _loglevel_over_min_loglevel(self, loglevel: LogLevel) -> bool:
         """

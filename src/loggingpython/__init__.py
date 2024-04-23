@@ -12,7 +12,7 @@ import importlib
 from .logger import Logger
 
 from .log_levels import LogLevel
-from .sys_procolls import SysProtocolls
+from .sys_protocolls import SysProtocolls
 
 from .handler.filehandler import FileHandler
 from .handler.consolehandler import ConsoleHandler

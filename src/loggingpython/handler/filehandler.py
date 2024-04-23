@@ -71,18 +71,6 @@ class FileHandler(Handler):
             filename = f"{self.logpath}/{self.name}_{self._current_date}.log"
             self.file = open(filename, "a")
 
-    def _update_file(self) -> None:
-        """
-        Updates the log file if the current date has changed.
-        """
-        current_date = datetime.now().strftime("%Y-%m-%d")
-        if (datetime.now() - self.last_log_time) > self.new_file_after:
-            self._current_date = current_date
-            self._close_file()
-            filename = f"{self.path}/{self.name}_{self._current_date}.log"
-            self.file = open(filename, "a")
-            self.last_log_time = datetime.now()
-
     def _close_file(self) -> None:
         """
         Closes the current log file.
