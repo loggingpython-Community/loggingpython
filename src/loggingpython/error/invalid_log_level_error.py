@@ -1,4 +1,4 @@
-class InvalidLogLevelError(Exception):
+class InvalidLogLevelErrorr_from_loggingpython(Exception):
     """
     Raised when an invalid log level is specified.
     This error indicates that the provided log level does not match any of the
