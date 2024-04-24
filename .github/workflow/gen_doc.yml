@@ -28,7 +28,7 @@ jobs:
       
     - name: Generate doc for .py
       run: |
-        sphinx-apidoc -o docs Src/loggingpython
+        sphinx-apidoc -o docs src/loggingpython
     
     - name: Generate doc
       run: |
