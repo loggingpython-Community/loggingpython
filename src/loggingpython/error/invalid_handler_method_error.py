@@ -31,7 +31,7 @@ messages.
 from ..handler.handler import Handler
 
 
-class InvalidHandlerMethodErrorr(TypeError):
+class InvalidHandlerMethodError(TypeError):
     """
     `loggingpython`
     Raised when a handler does not have the required 'emit' method.

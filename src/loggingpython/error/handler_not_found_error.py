@@ -28,7 +28,7 @@ logger, and therefore cannot be removed.
 """
 
 
-class HandlerNotFoundErrorr(ValueError):
+class HandlerNotFoundError(ValueError):
     """
     `loggingpython`
     Raised when a handler is not found in the logger's handlers.

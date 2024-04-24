@@ -109,12 +109,20 @@ class Logger:
             InvalidLogLevelError: If the provided log levels are not supported.
         """
 
-        self.name: str = name
-        self.min_loglevel: LogLevel = min_loglevel \
-            if min_loglevel in LogLevel else LogLevel.INFO
-        self.max_loglevel: LogLevel = max_loglevel \
-            if max_loglevel in LogLevel else LogLevel.CRITICAL
+        if min_loglevel in LogLevel:
+            self.min_loglevel: LogLevel = min_loglevel
 
+        else:
+            self.min_loglevel: LogLevel = LogLevel.INFO
+
+        if min_loglevel in LogLevel:
+            self.min_loglevel: LogLevel = min_loglevel
+
+        else:
+            self.min_loglevel: LogLevel = LogLevel.CRITICAL
+
+        self.name: str = name
+        
         self.handlers: list[Handler] = []
 
         self.iso_8601_format: str = "%Y-%m-%dT%H:%M:%S.%f%z"
