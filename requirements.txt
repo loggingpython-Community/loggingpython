@@ -1,4 +1,3 @@
 sphinx
 sphinx-autodoc-typehints
 python-docs-theme
-pytest
