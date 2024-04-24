@@ -1,3 +1,38 @@
+# MIT License
+
+# Copyright (c) 2024 Mr-Major-K
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+"""
+A class for handling log messages in JSON format.
+
+This class inherits from the Handler class and implements specific
+methods for formatting and outputting log messages in JSON files. It
+supports the creation of new log files based on the current date and
+allows customization of the log format string. The JSONHandler ensures
+that log messages are stored in a structured and easily accessible format,
+making it suitable for further analysis or review. It also includes
+features for hashing log messages for unique identification and updating
+the log file if the current date has changed.
+"""
+
 import os
 import json
 from datetime import datetime
@@ -18,6 +53,7 @@ class JSONHandler(Handler):
     features for hashing log messages for unique identification and updating
     the log file if the current date has changed.
     """
+
     def __init__(self,
                  name: str,
                  path: str = "logs") -> None:

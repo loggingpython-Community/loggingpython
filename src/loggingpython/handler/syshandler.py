@@ -1,3 +1,38 @@
+# MIT License
+
+# Copyright (c) 2024 Mr-Major-K
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+"""
+A class for handling log messages over a network connection.
+
+This class inherits from the Handler class and implements specific methods
+for sending and receiving log messages over a network connection. It
+supports both client and server modes, allowing for the establishment of
+connections, sending log messages, and handling incoming messages. The
+class provides decorators to ensure that certain methods can only be
+called by the client or server, enforcing the correct usage of the handler.
+It also includes error handling for scenarios such as server
+unreachability and incorrect method calls.
+   """
+
 import socket
 import json
 from functools import partial
@@ -22,6 +57,7 @@ class SysHandler(Handler):
     It also includes error handling for scenarios such as server
     unreachability and incorrect method calls.
     """
+
     def __init__(self,
                  name: str = "client",
                  client: bool = True,
