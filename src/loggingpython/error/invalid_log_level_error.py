@@ -28,7 +28,7 @@ supported log levels.
 """
 
 
-class InvalidLogLevelErrorr(Exception):
+class InvalidLogLevelError(Exception):
     """
     `loggingpython`
     Raised when an invalid log level is specified.

@@ -28,7 +28,7 @@ issues, incorrect server address or port, or the server not being active.
 """
 
 
-class ServerUnreachableErrorr(Exception):
+class ServerUnreachableError(Exception):
     """
     `loggingpython`
     Raised when the client fails to establish a connection to the server.

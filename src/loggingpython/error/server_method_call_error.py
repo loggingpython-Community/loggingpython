@@ -29,7 +29,7 @@ behavior.
 """
 
 
-class ServerMethodCallErrorr(Exception):
+class ServerMethodCallError(Exception):
     """
     `loggingpython`
     Raised when a method intended for the server is called on the client.
