@@ -87,6 +87,7 @@ class Logger:
     """
 
     _SUPPORTED_LEVELS: list = list(LogLevel)
+    _ISO_8601_FORMAT: str = "%Y-%m-%dT%H:%M:%S.%f%z"
 
     def __init__(self, name: str,
                  time_format: str = None,
@@ -109,23 +110,18 @@ class Logger:
             InvalidLogLevelError: If the provided log levels are not supported.
         """
 
-        if min_loglevel in LogLevel:
-            self.min_loglevel: LogLevel = min_loglevel
-
-        else:
+        self.min_loglevel: LogLevel = min_loglevel
+        if min_loglevel is None:
             self.min_loglevel: LogLevel = LogLevel.INFO
 
-        if min_loglevel in LogLevel:
-            self.min_loglevel: LogLevel = min_loglevel
-
-        else:
-            self.min_loglevel: LogLevel = LogLevel.CRITICAL
+        self.max_loglevel: LogLevel = max_loglevel
+        if max_loglevel is None:
+            self.max_loglevel: LogLevel = LogLevel.INFO
 
         self.name: str = name
 
         self.handlers: list[Handler] = []
 
-        self.iso_8601_format: str = "%Y-%m-%dT%H:%M:%S.%f%z"
         self.time_format: str = time_format
 
     def _validate_loglevel(self, loglevel: LogLevel) -> None:
@@ -176,7 +172,7 @@ class Logger:
             str: The current timestamp in ISO 8601 format.
         """
 
-        return datetime.now(timezone.utc).strftime(self.iso_8601_format)
+        return datetime.now(timezone.utc).strftime(self._ISO_8601_FORMAT)
 
     def _get_timestamp(self) -> str:
         """

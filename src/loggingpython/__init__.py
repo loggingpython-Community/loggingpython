@@ -32,12 +32,12 @@ logging.
 
 Examples:
     >>> from loggingpython.handler import FileHandler
-    >>> file_handler = FileHandler('logfile.log')
-    >>> file_handler.log('This is a log message.')
+    >>> file_handler = FileHandler('myLogger')
+    >>> file_handler.emit('This is a log message.')
 
     >>> from loggingpython.handler import ConsoleHandler
     >>> console_handler = ConsoleHandler()
-    >>> console_handler.log('This is a log message.')
+    >>> console_handler.emit('This is a log message.')
 
 In the Docs you will find further information about.
 """

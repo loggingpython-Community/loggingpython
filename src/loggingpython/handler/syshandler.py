@@ -117,7 +117,6 @@ class SysHandler(Handler):
             self._logger = logger
             self._run_server()
 
-    @staticmethod
     def _client_only(func):
         """
         Decorator to ensure a method can only be called by a client.
@@ -133,7 +132,6 @@ class SysHandler(Handler):
                 raise ClientMethodCallError()
         return wrapper
 
-    @staticmethod
     def _server_only(func):
         """
         Decorator to ensure a method can only be called by a server.
