@@ -30,10 +30,6 @@ jobs:
       run: |
         sphinx-apidoc -o doc_sphinx src/loggingpython
 
-    - name: Generate doc
-      run: |
-        sphinx-build -b html src/loggingpython doc_sphinx/build
-
     - name: Commit and push changes
       run: |
         git config --global user.name 'GitHub Actions'
