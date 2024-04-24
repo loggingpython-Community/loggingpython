@@ -122,7 +122,7 @@ class Logger:
             self.min_loglevel: LogLevel = LogLevel.CRITICAL
 
         self.name: str = name
-        
+
         self.handlers: list[Handler] = []
 
         self.iso_8601_format: str = "%Y-%m-%dT%H:%M:%S.%f%z"
