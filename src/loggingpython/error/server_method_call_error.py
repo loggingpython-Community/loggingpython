@@ -1,5 +1,6 @@
-class ServerMethodCallErrorr_from_loggingpython(Exception):
+class ServerMethodCallErrorr(Exception):
     """
+    `loggingpython`
     Raised when a method intended for the server is called on the client.
     This error indicates that a method that should only be executed by the
     server was mistakenly called by the client, which could lead to incorrect

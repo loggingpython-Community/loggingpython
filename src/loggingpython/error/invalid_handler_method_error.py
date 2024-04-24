@@ -1,8 +1,9 @@
 from ..handler.handler import Handler
 
 
-class InvalidHandlerMethodErrorr_from_loggingpython(TypeError):
+class InvalidHandlerMethodErrorr(TypeError):
     """
+    `loggingpython`
     Raised when a handler does not have the required 'emit' method.
     This error indicates that the handler object passed to the logger does not
     implement the 'emit' method, which is necessary for processing log

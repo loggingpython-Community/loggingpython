@@ -1,5 +1,6 @@
-class HandlerNotFoundErrorr_from_loggingpython(ValueError):
+class HandlerNotFoundErrorr(ValueError):
     """
+    `loggingpython`
     Raised when a handler is not found in the logger's handlers.
     This error indicates that the specified handler was not added to the
     logger, and therefore cannot be removed.
