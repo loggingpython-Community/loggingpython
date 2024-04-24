@@ -1,7 +1,7 @@
 name: Update Documentation
 
 permissions:
-  contents: write
+ contents: write
 
 on:
  push:
@@ -20,16 +20,15 @@ jobs:
       with:
         python-version: '3.x'
 
-    
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-      
+
     - name: Generate doc for .py
       run: |
         sphinx-apidoc -o doc_sphinx src/loggingpython
-    
+
     - name: Generate doc
       run: |
         sphinx-build -b html src/loggingpython doc_sphinx/build
