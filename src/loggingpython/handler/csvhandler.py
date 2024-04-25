@@ -91,7 +91,6 @@ class CSVHandler(Handler):
         formatted_message = df.to_csv(index=False, header=False, sep=";",
                                       lineterminator="\n")
 
-        return formatted_message
         self._update_file()
         self.file.write(formatted_message)
         self.file.flush()

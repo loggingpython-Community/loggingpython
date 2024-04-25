@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='loggingpython',
-    version='1.4.11',
+    version='1.4.12',
     description='Loggingpython is a Python package that provides a simple and\
  extensible way to integrate logging into your applications. The package\
  starts with a simple logger and can be extended with additional functions to\
@@ -20,7 +20,7 @@ setup(
     install_requires=['colorama', 'pandas'],
     license='MIT',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',

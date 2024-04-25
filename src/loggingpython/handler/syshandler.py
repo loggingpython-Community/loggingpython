@@ -168,10 +168,7 @@ class SysHandler(Handler):
         """
         try:
             self._syssocket.connect(self.server_addr)
-        except ConnectionRefusedError:
-            raise ServerUnreachableError(servername=self.server_name,
-                                         port=self.port)
-        except TimeoutError:
+        except (ConnectionRefusedError, TimeoutError):
             raise ServerUnreachableError(servername=self.server_name,
                                          port=self.port)
 
