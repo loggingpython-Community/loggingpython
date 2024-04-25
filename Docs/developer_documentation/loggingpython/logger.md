@@ -9,6 +9,9 @@ The `Logger` class is the heart of the logging system. It provides methods for a
 ## Initialization
 A `Logger` object is initialized with a name, an optional time format and the minimum and maximum log severities.
 ```python
+from loggingpython.logger import Logger
+from loggingpython.log_levels import LogLevel
+
 logger = Logger(name="my_logger", time_format="%Y-%m-%d %H:%M:%S", min_loglevel=LogLevel.INFO, max_loglevel=LogLevel.CRITICAL)
 ```
 
