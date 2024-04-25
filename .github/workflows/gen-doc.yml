@@ -19,16 +19,16 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.12'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Generate doc for .py
+    - name: Build HTML documentation
       run: |
-        sphinx-apidoc -o doc_sphinx/source doc_sphinx/build
+        sphinx-build -b html doc_sphinx/source doc_sphinx/build/html
 
     - name: Add and commit documentation changes
       run: |
