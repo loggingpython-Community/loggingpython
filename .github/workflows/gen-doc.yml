@@ -28,7 +28,7 @@ jobs:
 
     - name: Build HTML documentation
       run: |
-        sphinx-build -b html doc_sphinx/source doc_sphinx/build/html
+        sphinx-build -b html doc_sphinx/source doc_sphinx/build
 
     - name: Add and commit documentation changes
       run: |
