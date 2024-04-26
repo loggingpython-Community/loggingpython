@@ -25,7 +25,7 @@ Creating Custom Handlers
 The `make_own_handler` guide provides detailed instructions on how to create your own custom handlers for `loggingpython`. This is particularly useful for developers looking to tailor the logging functionality to their specific needs.
 
 Contributing to loggingpython
-----------------------------
+-----------------------------
 
 If you're interested in contributing to `loggingpython`, this section provides guidelines on how to get involved, report issues, and submit pull requests. We welcome contributions from the community and look forward to enhancing `loggingpython` together.
 
