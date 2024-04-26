@@ -1,13 +1,16 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('/home/runner/work/loggingpython/\
+loggingpython/src'))
+
 
 project = 'loggingpython'
 copyright = '2024, Mr-Major-K'
 author = 'Mr-Major-K'
 
 version = '1.4'
-release = '1.4.2'
+release = '1.4.12'
 
 language = 'en'
 
