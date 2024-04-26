@@ -21,12 +21,29 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines a custom exception class `ClientMethodCallError` for
+handling errors related to the incorrect calling of client-specific methods on
+the server side. This exception is part of the `loggingpython` package,
+designed to ensure that client-side methods are not mistakenly invoked on the
+server, which could lead to incorrect behavior or security vulnerabilities.
 
-Raised when a method intended for the client is called on the server.
-This error indicates that a method that should only be executed by the
-client was mistakenly called by the server, which could lead to incorrect
-behavior.
+The `ClientMethodCallError` class inherits from the built-in `Exception`
+class, allowing it to be raised and caught like any other exception. It takes
+an optional message parameter that defaults to "This method can only be called
+by the client." This message is passed to the base class constructor to
+provide a descriptive error message when the exception is raised.
+
+Example usage:
+
+    try:
+        # Attempt to call a client-specific method on the server
+        some_server_method()
+    except ClientMethodCallError as e:
+        print(f"Error: {e}")
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 

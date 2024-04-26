@@ -21,26 +21,31 @@
 # SOFTWARE.
 
 """
-`loggingpython` is a Python package that provides a simple and extensible way
-to integrate logging into your applications. The package starts with a basic
-logger and can be extended with additional functions to meet the requirements
-of your application.
+This module serves as the entry point for all custom exception classes within
+the `loggingpython` package, specifically those related to error handling in
+the logging system. The exceptions defined here are designed to provide more
+specific error information and handling capabilities for various
+logging-related issues, such as invalid log levels, missing handlers, and
+server/client method call errors.
 
-This module contains functions and classes used for error handling in the
-`loggingpython` library.
+The exceptions are organized into separate files for clarity and
+maintainability, each focusing on a specific type of error. This modular
+approach allows for easy extension and customization of the error handling
+capabilities of the `loggingpython` package.
 
-It provides specific error classes for different types of errors that can
-occur during interaction with a server or the execution of methods on the
-client.
+Example usage:
 
-Example:
-    >>> from loggingpython.error import ServerUnreachableError
-    >>> try:
-    ...     # Code that could trigger a ServerUnreachableError
-    ... except ServerUnreachableError as e:
-    ...     print(f “Server could not be reached: {e}”)
+    from loggingpython.error import InvalidLogLevelError
 
-In the Docs you will find further information about.
+    try:
+        # Attempt to set an invalid log level
+        logger.setLevel("INVALID_LEVEL")
+    except InvalidLogLevelError as e:
+        print(f"Error: {e}")
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 

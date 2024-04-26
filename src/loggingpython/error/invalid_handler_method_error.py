@@ -21,12 +21,29 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines a custom exception class `InvalidHandlerMethodError` for
+handling errors related to handlers that do not implement the required 'emit'
+method. This exception is part of the `loggingpython` package, designed to
+ensure that all handlers used in the logging system are correctly implemented
+and capable of processing log messages.
 
-Raised when a handler does not have the required 'emit' method.
-This error indicates that the handler object passed to the logger does not
-implement the 'emit' method, which is necessary for processing log
-messages.
+The `InvalidHandlerMethodError` class inherits from the built-in `TypeError`
+class, allowing it to be raised and caught like any other exception. It takes
+a handler object as a parameter, which is used to construct a descriptive
+error message indicating the handler class that failed to implement the 'emit'
+method.
+
+Example usage:
+
+    try:
+        # Attempt to add a handler that does not implement the 'emit' method
+        logger.addHandler(some_invalid_handler)
+    except InvalidHandlerMethodError as e:
+        print(f"Error: {e}")
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 from ..handler.handler import Handler

@@ -21,11 +21,27 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines a custom exception class `InvalidLogLevelError` for
+handling errors related to the specification of an invalid log level. This
+exception is part of the `loggingpython` package, designed to ensure that
+log levels are correctly specified and recognized by the logging system.
 
-Raised when an invalid log level is specified.
-This error indicates that the provided log level does not match any of the
-supported log levels.
+The `InvalidLogLevelError` class inherits from the built-in `ValueError`
+class, allowing it to be raised and caught like any other exception. It takes
+a log level string as a parameter, which is used to construct a descriptive
+error message indicating the invalid log level.
+
+Example usage:
+
+    try:
+        # Attempt to set an invalid log level
+        logger.setLevel("INVALID_LEVEL")
+    except InvalidLogLevelError as e:
+        print(f"Error: {e}")
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 

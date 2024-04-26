@@ -21,11 +21,28 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines a custom exception class `ServerUnreachableError` for
+handling errors related to the inability to establish a connection to a
+server. This exception is part of the `loggingpython` package, designed to
+ensure that network issues, incorrect server addresses or ports, or server
+inactivity are correctly identified and handled.
 
-Raised when the client fails to establish a connection to the server.
-This error indicates that the server might be unreachable due to network
-issues, incorrect server address or port, or the server not being active.
+The `ServerUnreachableError` class inherits from the built-in `Exception`
+class, allowing it to be raised and caught like any other exception. It takes
+a server name and port as parameters, which are used to construct a
+descriptive error message indicating the server that could not be reached.
+
+Example usage:
+
+    try:
+        # Attempt to connect to a server that is not reachable
+        connect_to_server("unreachable.server", 1234)
+    except ServerUnreachableError as e:
+        print(f"Error: {e}")
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 
