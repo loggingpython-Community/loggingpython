@@ -16,7 +16,6 @@ Main Components
 ---------------
 
 `__init__.py`
-~~~~~~~~~~~~
 
 The `__init__.py` file within the `loggingpython` package serves as an entry point for the package. It imports and exposes the various handler classes available within the `loggingpython` package, providing a convenient way for users to access and utilize these handlers for logging purposes.
 
