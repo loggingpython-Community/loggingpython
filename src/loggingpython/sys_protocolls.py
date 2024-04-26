@@ -21,14 +21,38 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines the `SysProtocolls` class, an enumeration of the system
+protocols used within the `loggingpython` package for network communication.
+The `SysProtocolls` class includes two members: TCP and UDP, representing the
+Transmission Control Protocol and the User Datagram Protocol, respectively.
 
-Enum class that represents the TCP and UDP system protocols.
+TCP is used for connection-oriented services, ensuring reliable, ordered, and
+error-checked delivery of a stream of bytes between applications running on
+hosts communicating via an IP network. UDP, on the other hand, is used for
+connectionless services, allowing for the transmission of datagrams without
+establishing a connection.
 
-This class defines two enum members: TCP and UDP, which represent the
-corresponding values from the socket module. TCP stands for Transmission
-Control Protocol and is used for connection-oriented services, while UDP
-stands for User Datagram Protocol and is used for connectionless services.
+The `SysProtocolls` class is designed to provide a clear and consistent way to
+specify the protocol type for network communication within the application,
+ensuring that the correct protocol is used based on the requirements of the
+communication task.
+
+Example usage:
+
+    from loggingpython.sys_protocolls import SysProtocolls
+
+    # Specify the protocol for a network operation
+    protocol = SysProtocolls.TCP
+
+    # Use the protocol in a network operation
+    # (Assuming a function that takes a protocol as an argument)
+    perform_network_operation(protocol)
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
+The focus here is on defining and using system protocols to ensure clear and
+effective network communication practices.
 """
 
 from enum import Enum

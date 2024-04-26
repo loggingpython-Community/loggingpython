@@ -21,16 +21,34 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines the `LogLevel` class, an enumeration of the different
+log levels used within the `loggingpython` package. Log levels are a
+fundamental aspect of logging, allowing developers to categorize log messages
+by their severity or importance. This module provides a clear and consistent
+way to specify log levels across the application, ensuring that log messages
+are handled appropriately based on their level.
 
-Enum class that represents the different log levels.
+The `LogLevel` class includes five levels: DEBUG, INFO, WARNING, ERROR, and
+CRITICAL. These levels are used to indicate the severity of the log message,
+with DEBUG being the lowest level and CRITICAL being the highest. This
+classification helps in filtering log messages based on their importance,
+allowing for more efficient debugging and monitoring of the application.
 
-This class defines five enum members: DEBUG, INFO, WARNING, ERROR, and
-CRITICAL, which represent the corresponding log levels used in logging.
-DEBUG is the lowest level, used for detailed debugging information. INFO
-is used for general information messages. WARNING is used for warning
-messages. ERROR is used for error messages. CRITICAL is used for critical
-error messages that may prevent the program from running.
+Example usage:
+
+    from loggingpython.log_levels import LogLevel
+
+    # Set the log level to INFO
+    logger.setLevel(LogLevel.INFO)
+
+    # Log a message at the INFO level
+    logger.info('This is an informational message.')
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
+The focus here is on defining and using log levels to ensure clear and
+effective logging practices.
 """
 
 from enum import Enum

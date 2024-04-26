@@ -21,33 +21,37 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines the `Logger` class, the core component of the
+`loggingpython` package designed to handle logging messages in a structured
+and extensible way. The `Logger` class is a central part of the logging system,
+providing a simple and customizable logging solution for Python applications.
+It inherits from a base `Handler` class and implements specific methods for
+formatting and outputting log messages.
 
-A class for handling log messages in a structured and extensible way.
+The `Logger` class supports various log levels, including DEBUG, INFO,
+WARNING, ERROR, and CRITICAL, allowing for detailed and flexible logging. It
+is equipped with methods for adding and removing handlers, which are
+responsible for processing and outputting log messages. Handlers can be
+customized to output log messages to various destinations, such as the
+console, files, databases, or external systems. This extensibility makes the
+`Logger` class suitable for a wide range of applications, from simple scripts
+to complex systems.
 
-This class, `Logger`, is designed to provide a simple and customizable
-logging solution for Python applications. It inherits from a base `Handler`
-class and implements specific methods for formatting and outputting log
-messages. The `Logger` class supports various log levels, including DEBUG,
-INFO, WARNING, ERROR, and CRITICAL, allowing for detailed and flexible
-logging.
+Example usage:
 
-The `Logger` class is equipped with methods for adding and removing
-handlers, which are responsible for processing and outputting log messages.
-Handlers can be customized to output log messages to various destinations,
-such as the console, files, databases, or external systems. This
-extensibility makes the `Logger` class suitable for a wide range of
-applications, from simple scripts to complex systems.
+    from loggingpython.logger import Logger
 
-The `Logger` class also includes methods for logging messages at different
-severity levels, ensuring that developers can easily categorize and
-prioritize log messages based on their importance. Additionally, the class
-provides a mechanism for catching exceptions and logging them,
-facilitating error handling and debugging.
+    # Create a logger
+    logger = Logger('my_logger')
 
-In summary, the `Logger` class offers a straightforward and powerful way
-to integrate logging into Python applications, providing a foundation for
-both basic and advanced logging requirements.
+    # Log a message at the INFO level
+    logger.info('This is an informational message.')
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
+The focus here is on the `Logger` class, offering a straightforward and
+powerful way to integrate logging into Python applications.
 """
 
 from datetime import datetime, timezone

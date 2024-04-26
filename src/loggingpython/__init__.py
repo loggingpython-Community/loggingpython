@@ -26,20 +26,37 @@ to integrate logging into your applications. The package starts with a basic
 logger and can be extended with additional functions to meet the requirements
 of your application.
 
-This module contains various handler classes that can be used for different
-types of logging purposes, including file, console, JSON, SQL, CSV and system
-logging.
+`loggingpython` is a comprehensive logging solution for Python applications,
+designed to provide a simple and extensible way to integrate logging into your
+projects. This package includes a basic logger setup and can be extended with
+additional handlers and formatters to meet the specific logging requirements
+of your application.
 
-Examples:
-    >>> from loggingpython.handler import FileHandler
-    >>> file_handler = FileHandler('myLogger')
-    >>> file_handler.emit('This is a log message.')
+The package is structured to support various types of logging, including file
+logging, console logging, JSON logging, SQL logging, CSV logging, and system
+logging. Each of these logging types is implemented through dedicated handler
+classes, allowing for a flexible and customizable logging setup.
 
-    >>> from loggingpython.handler import ConsoleHandler
-    >>> console_handler = ConsoleHandler()
-    >>> console_handler.emit('This is a log message.')
+Example usage:
 
-In the Docs you will find further information about.
+    from loggingpython.handler import FileHandler, ConsoleHandler
+
+    # Set up a file handler
+    file_handler = FileHandler('logfile.log')
+    # Set up a console handler
+    console_handler = ConsoleHandler()
+
+    # Add handlers to the logger
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+    # Log a message
+    logger.info('This is an informational message.')
+
+This package is part of the `loggingpython` project, which aims to simplify
+the process of setting up and managing logging in Python applications, making
+it easier for developers to include robust logging capabilities in their
+projects.
 """
 
 import importlib
