@@ -35,7 +35,6 @@ The `__init__.py` file within the `loggingpython` package serves as an entry poi
 - `get_all_handlers() -> dict[str]`: Returns a dictionary of all available handler classes.
 
 `handler/__init__.py`
-~~~~~~~~~~~~~~~~~~~~
 
 The `__init__.py` file within the `handler` folder of the `loggingpython` package serves as an entry point for the handler module. It imports and exposes the various handler classes available within the `loggingpython` package, providing a convenient way for users to access and utilize these handlers for logging purposes.
 
@@ -50,7 +49,6 @@ The `__init__.py` file within the `handler` folder of the `loggingpython` packag
 - `SysHandler`: Handles log messages by sending them to the system's logging facility.
 
 `error/__init__.py`
-~~~~~~~~~~~~~~~~~~
 
 The `__init__.py` file within the `error` folder of the `loggingpython` package serves as an entry point for the error module. It imports and exposes the various error classes available within the `loggingpython` package, providing a convenient way for users to access and utilize these errors for handling exceptions in their applications.
 
