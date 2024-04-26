@@ -21,19 +21,39 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines the `SysHandler` class, a component of the `loggingpython`
+package designed to handle logging messages over a network connection. The
+`SysHandler` class is a concrete implementation of the abstract `Handler`
+class, providing the functionality to send and receive log messages over TCP
+or UDP connections, supporting both client and server modes.
 
-A class for handling log messages over a network connection.
+The `SysHandler` class supports dynamic switching between TCP and UDP
+protocols, allowing for flexible network communication based on the
+requirements of the application. It includes error handling for scenarios such
+as server unreachability and incorrect method calls, ensuring robust and
+reliable logging operations.
 
-This class inherits from the Handler class and implements specific methods
-for sending and receiving log messages over a network connection. It
-supports both client and server modes, allowing for the establishment of
-connections, sending log messages, and handling incoming messages. The
-class provides decorators to ensure that certain methods can only be
-called by the client or server, enforcing the correct usage of the handler.
-It also includes error handling for scenarios such as server
-unreachability and incorrect method calls.
-   """
+Example usage:
+
+    from loggingpython.handler import SysHandler
+
+    # Set up a SysHandler for TCP communication
+    sys_handler = SysHandler(name="client",
+                             client=True,
+                             protocoll=SysProtocolls.TCP)
+
+    # Add the SysHandler to the logger
+    logger.addHandler(sys_handler)
+
+    # Log a message
+    logger.info('This is an informational message.')
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
+The focus here is on leveraging network connections for logging, offering a
+powerful way to manage log data across distributed systems.
+"""
 
 import socket
 import json

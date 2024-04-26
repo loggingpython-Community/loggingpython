@@ -21,14 +21,33 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines the `ConsoleHandler` class, a component of the
+`loggingpython` package designed to handle logging messages by outputting them
+to the console. The `ConsoleHandler` class is a concrete implementation of the
+abstract `Handler` class, providing the functionality to display log messages
+in the terminal or command prompt.
 
-A class for handling log messages in the console.
+The `ConsoleHandler` class supports color-coded output based on the severity
+of the log messages, allowing for easy identification of different types of
+log messages. It can be configured with a custom log format string to control
+the appearance of the log messages.
 
-This class inherits from the Handler class and implements specific
-methods for formatting and outputting log messages in the console.
-It supports the coloring of log messages based on their
-severity and allows customization of the formatting string.
+Example usage:
+
+    from loggingpython.handler import ConsoleHandler
+
+    # Set up a console handler
+    console_handler = ConsoleHandler()
+
+    # Add the console handler to the logger
+    logger.addHandler(console_handler)
+
+    # Log a message
+    logger.info('This is an informational message.')
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 from typing import TextIO

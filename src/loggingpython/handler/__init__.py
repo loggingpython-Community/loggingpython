@@ -21,25 +21,37 @@
 # SOFTWARE.
 
 """
-`loggingpython` is a Python package that provides a simple and extensible way
-to integrate logging into your applications. The package starts with a basic
-logger and can be extended with additional functions to meet the requirements
-of your application.
+This module serves as the entry point for all handler classes within the
+`loggingpython` package, specifically those responsible for directing
+log messages to various destinations. Handlers are the core component of the
+logging system, allowing log messages to be written to files, sent over
+networks, or displayed on the console, among other destinations.
 
-This module contains various handler classes that can be used for different
-types of logging purposes, including file, console, JSON, SQL, CSV and system
-logging.
+The handlers defined in this module are designed to be easily extendable and
+customizable, providing a flexible framework for integrating logging into
+Python applications. Each handler class is responsible for a specific type of
+logging destination, such as file logging, console logging, or logging to
+a database.
 
-Examples:
-    >>> from loggingpython.handler import FileHandler
-    >>> file_handler = FileHandler('logfile.log')
-    >>> file_handler.emit('This is a log message.')
+Example usage:
 
-    >>> from loggingpython.handler import ConsoleHandler
-    >>> console_handler = ConsoleHandler()
-    >>> console_handler.emit('This is a log message.')
+    from loggingpython.handler import FileHandler, ConsoleHandler
 
-In the Docs you will find further information about.
+    # Set up a file handler
+    file_handler = FileHandler('logfile.log')
+    # Set up a console handler
+    console_handler = ConsoleHandler()
+
+    # Add handlers to the logger
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+    # Log a message
+    logger.info('This is an informational message.')
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 from .handler import Handler

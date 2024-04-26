@@ -21,13 +21,40 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines the `Handler` class, the base class for all handler
+implementations within the `loggingpython` package. Handlers are responsible
+for processing log messages, directing them to various destinations such as
+files, consoles, databases, or external services.
 
-Base class for all handlers.
+The `Handler` class provides a common interface for all handler subclasses,
+requiring them to implement the `emit` method. This method is responsible for
+the actual processing of log messages, allowing for a wide range of custom
+handling behaviors.
 
-This class defines the interface for all handler classes. Handlers are
-responsible for processing log messages. Subclasses must implement the
-emit method to provide specific handling behavior.
+Subclasses of `Handler` can be used to implement specific logging behaviors,
+such as writing to files, sending messages over the network, or storing
+log data in databases. Each subclass must provide its own implementation of
+the `emit` method to define how log messages are handled.
+
+Example usage:
+
+    from loggingpython.handler import Handler, FileHandler
+
+    class CustomHandler(Handler):
+        def emit(self, record):
+            # Custom handling logic here
+            pass
+
+    # Using the custom handler
+    custom_handler = CustomHandler()
+    logger.addHandler(custom_handler)
+
+    # Log a message
+    logger.info('This is an informational message.')
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 

@@ -21,16 +21,31 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines the `FileHandler` class, a component of the `loggingpython`
+package designed to handle logging messages by writing them to a file. The
+`FileHandler` class is a concrete implementation of the abstract `Handler`
+class, providing the functionality to output log messages to a specified file.
 
-A class for handling log messages in files.
+The `FileHandler` class supports various file handling modes, such as
+appending to an existing file or overwriting it, and can be configured with a
+custom log format string to control the appearance of the log messages.
 
-This class inherits from the Handler class and implements specific
-methods for formatting and outputting log messages to files. It supports
-the creation of log files in a specified directory, automatic file rotation
-based on the current date, and allows customization of the formatting
-string. The FileHandler ensures that log messages are stored persistently
-and can be reviewed later for debugging or auditing purposes.
+Example usage:
+
+    from loggingpython.handler import FileHandler
+
+    # Set up a file handler to append to a log file
+    file_handler = FileHandler('logfile.log', mode='a')
+
+    # Add the file handler to the logger
+    logger.addHandler(file_handler)
+
+    # Log a message
+    logger.info('This is an informational message.')
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 import os

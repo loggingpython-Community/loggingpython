@@ -21,16 +21,33 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines the `CSVHandler` class, a component of the `loggingpython`
+package designed to handle logging messages by writing them to a CSV file. The
+`CSVHandler` class is a concrete implementation of the abstract `Handler`
+class, providing the functionality to output log messages in a structured and
+easily accessible format, making it suitable for further analysis or review.
 
-A class for handling log messages in CSV format.
-
-This class inherits from the Handler class and implements specific
-methods for formatting and outputting log messages in CSV files. It
-supports the creation of new log files based on the current date and
-allows customization of the log format string. The CSVHandler ensures
+The `CSVHandler` class supports the creation of new log files based on the
+current date and allows customization of the log format string. It ensures
 that log messages are stored in a structured and easily accessible format,
 making it suitable for further analysis or review.
+
+Example usage:
+
+    from loggingpython.handler import CSVHandler
+
+    # Set up a CSV handler
+    csv_handler = CSVHandler('logfile', path='logs')
+
+    # Add the CSV handler to the logger
+    logger.addHandler(csv_handler)
+
+    # Log a message
+    logger.info('This is an informational message.')
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 import os

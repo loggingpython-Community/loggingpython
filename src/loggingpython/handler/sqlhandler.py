@@ -21,18 +21,34 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines the `SQLHandler` class, a component of the `loggingpython`
+package designed to handle logging messages by writing them to a SQL database.
+The `SQLHandler` class is a concrete implementation of the abstract `Handler`
+class, providing the functionality to output log messages into a structured
+database, facilitating advanced querying and analysis.
 
-A class for handling log messages in SQL databases.
+The `SQLHandler` class is specifically tailored for SQLite3 databases,
+offering a lightweight and efficient solution for logging in applications
+where a full-fledged database system might be overkill. It ensures that
+log messages are stored in a structured and easily accessible format, making
+it suitable for further analysis or review.
 
-This class inherits from the Handler class and implements specific
-methods for formatting and outputting log messages into SQL databases. It
-supports the creation of new log databases based on the current date and
-allows customization of the log format string. The SQLHandler ensures
-that log messages are stored in a structured and easily accessible format,
-making it suitable for further analysis or review. It also includes
-features for updating the log database if the current date has changed and
-for creating the necessary database structure.
+Example usage:
+
+    from loggingpython.handler import SQLHandler
+
+    # Set up a SQL handler
+    sql_handler = SQLHandler('logfile', path='logs', db_type='sqlite')
+
+    # Add the SQL handler to the logger
+    logger.addHandler(sql_handler)
+
+    # Log a message
+    logger.info('This is an informational message.')
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 import os

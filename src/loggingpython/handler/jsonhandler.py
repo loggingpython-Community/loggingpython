@@ -21,18 +21,33 @@
 # SOFTWARE.
 
 """
-`loggingpython`
+This module defines the `JSONHandler` class, a component of the `loggingpython`
+package designed to handle logging messages by writing them to a JSON file.
+The `JSONHandler` class is a concrete implementation of the abstract `Handler`
+class, providing the functionality to output log messages in a JSON format,
+which is both human-readable and easily parsed by machines.
 
-A class for handling log messages in JSON format.
-
-This class inherits from the Handler class and implements specific
-methods for formatting and outputting log messages in JSON files. It
-supports the creation of new log files based on the current date and
-allows customization of the log format string. The JSONHandler ensures
+The `JSONHandler` class supports the creation of new log files based on the
+current date and allows customization of the log format string. It ensures
 that log messages are stored in a structured and easily accessible format,
-making it suitable for further analysis or review. It also includes
-features for hashing log messages for unique identification and updating
-the log file if the current date has changed.
+making it suitable for further analysis or review.
+
+Example usage:
+
+    from loggingpython.handler import JSONHandler
+
+    # Set up a JSON handler
+    json_handler = JSONHandler('logfile', path='logs')
+
+    # Add the JSON handler to the logger
+    logger.addHandler(json_handler)
+
+    # Log a message
+    logger.info('This is an informational message.')
+
+This module is part of the `loggingpython` package, which aims to provide a
+comprehensive logging solution for Python applications, including error
+handling and logging mechanisms for both client and server-side operations.
 """
 
 import os
