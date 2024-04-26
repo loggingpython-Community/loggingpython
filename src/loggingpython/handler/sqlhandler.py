@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 """
- A class for handling log messages in SQL databases.
+A class for handling log messages in SQL databases.
 
 This class inherits from the Handler class and implements specific
 methods for formatting and outputting log messages into SQL databases. It
