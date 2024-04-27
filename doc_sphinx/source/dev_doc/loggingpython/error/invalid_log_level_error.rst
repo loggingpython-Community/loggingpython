@@ -13,7 +13,7 @@ The `InvalidLogLevelError` exception class is responsible for indicating when an
    :caption: Contents:
 
    init
-   client_method_cll_error
+   client_method_call_error
    handler_not_found_error
    invalid_handler_method_error
    server_method_call_error

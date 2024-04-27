@@ -13,7 +13,7 @@ The `ServerUnreachableError` exception class is designed to indicate when a clie
    :caption: Contents:
 
    init
-   client_method_cll_error
+   client_method_call_error
    handler_not_found_error
    invalid_handler_method_error
    invalid_log_level_error

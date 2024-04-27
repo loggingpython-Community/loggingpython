@@ -13,7 +13,7 @@ The `HandlerNotFoundError` exception class is responsible for indicating when a 
    :caption: Contents:
 
    init
-   client_method_cll_error
+   client_method_call_error
    invalid_handler_method_error
    invalid_log_level_error
    server_method_call_error
