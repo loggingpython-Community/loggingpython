@@ -1,5 +1,5 @@
 API Reference for `loggingpython`
-==================================
+=================================
 
 The `loggingpython` package provides a simple and extensible way to integrate logging into Python applications. This documentation serves as an API reference, detailing the main components and their functionalities.
 

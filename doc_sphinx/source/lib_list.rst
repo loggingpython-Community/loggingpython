@@ -1,5 +1,5 @@
 Libraries used in the `loggingpython` project
-===============================================
+=============================================
 
 This document contains a list of all external libraries used in the `loggingpython` project.
 
@@ -32,7 +32,7 @@ Additional libraries
 .. _sys: https://docs.python.org/3/library/sys.html
 
 Test and development tools
----------------------------
+--------------------------
 
 - `pytest`_: For writing and executing tests.
 - `flake8`_: For static code analysis.

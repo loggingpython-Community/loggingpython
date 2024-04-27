@@ -1,10 +1,10 @@
 Create your own handlers in `loggingpython`
-=============================================
+===========================================
 
 `loggingpython` provides a flexible and extensible architecture that allows developers to create their own handlers to fulfill specific logging functionalities. This documentation will guide you through the process of creating your own handler, including the basics, a practical example and a summary of the benefits.
 
 Why create your own handlers?
-----------------------------
+-----------------------------
 
 Creating your own handlers allows you to customize the logging functionality of `loggingpython` to the specific requirements of your application. This can be particularly useful if the predefined handlers do not exactly meet your needs or if you want to implement a unique logging strategy.
 
