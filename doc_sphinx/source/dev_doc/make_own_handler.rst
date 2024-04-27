@@ -53,7 +53,7 @@ By creating your own handlers, you can customize the logging functionality of `l
 This section is intended to provide clear guidance and examples for developers who wish to extend `loggingpython`.
 
 Contribute to `loggingpython`
-----------------------------
+-----------------------------
 
 We invite you to contribute your own handlers to `loggingpython`. By sharing your creative solutions and innovations, we can continue to improve the library and make it accessible to the entire community.
 
