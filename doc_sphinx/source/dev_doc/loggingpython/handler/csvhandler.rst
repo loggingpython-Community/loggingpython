@@ -17,11 +17,13 @@ The following sections automatically generate documentation for the `CSVHandler`
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 .. autoclass:: loggingpython.handler.CSVHandler
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 Initialization
 --------------

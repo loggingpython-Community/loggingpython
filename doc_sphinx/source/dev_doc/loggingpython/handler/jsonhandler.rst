@@ -17,11 +17,13 @@ The following sections automatically generate documentation for the `JSONHandler
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 .. autoclass:: loggingpython.handler.JSONHandler
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 Initialization
 --------------

@@ -17,11 +17,13 @@ The following sections automatically generate documentation for the `ConsoleHand
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 .. autoclass:: loggingpython.handler.ConsoleHandler
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 Initialization
 --------------

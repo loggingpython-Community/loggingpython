@@ -17,11 +17,13 @@ The following sections automatically generate documentation for the `Handler` cl
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 .. autoclass:: loggingpython.handler.Handler
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 Initialization
 --------------
