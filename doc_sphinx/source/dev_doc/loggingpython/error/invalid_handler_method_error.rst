@@ -1,5 +1,5 @@
 InvalidHandlerMethodError Documentation
-====================================
+=======================================
 
 The `InvalidHandlerMethodError` class is part of the `loggingpython` package, which provides a simple and extensible way to integrate logging into Python applications. This documentation offers a detailed insight into the functionality and usage of the `InvalidHandlerMethodError` exception class defined in this file.
 
@@ -9,7 +9,7 @@ Overview
 The `InvalidHandlerMethodError` exception class is responsible for indicating when a handler does not have the required 'emit' method. This error is raised to signal that the handler object passed to the logger does not implement the 'emit' method, which is necessary for processing log messages.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the `InvalidHandlerMethodError` class and its members within the `loggingpython.error` module.
 

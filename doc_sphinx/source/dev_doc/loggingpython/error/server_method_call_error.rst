@@ -1,5 +1,5 @@
 ServerMethodCallError Documentation
-==================================
+===================================
 
 The `ServerMethodCallError` class is part of the `loggingpython` package, which provides a simple and extensible way to integrate logging into Python applications. This documentation offers a detailed insight into the functionality and usage of the `ServerMethodCallError` exception class defined in this file.
 
@@ -9,7 +9,7 @@ Overview
 The `ServerMethodCallError` exception class is responsible for indicating when a method intended for the server is mistakenly called on the client. This error is raised to signal that a method that should only be executed by the server was incorrectly called by the client, which could lead to incorrect behavior.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the `ServerMethodCallError` class and its members within the `loggingpython.error` module.
 

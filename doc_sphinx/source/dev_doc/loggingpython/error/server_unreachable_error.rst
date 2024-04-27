@@ -1,5 +1,5 @@
 ServerUnreachableError Documentation
-===================================
+====================================
 
 The `ServerUnreachableError` class is part of the `loggingpython` package, which provides a simple and extensible way to integrate logging into Python applications. This documentation provides a detailed insight into the functionality and usage of the `ServerUnreachableError` exception class defined in this file.
 
@@ -9,7 +9,7 @@ Overview
 The `ServerUnreachableError` exception class is designed to indicate when a client fails to establish a connection to the server. This error signifies that the server might be unreachable due to network issues, incorrect server address or port, or the server not being active.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the `ServerUnreachableError` class and its members within the `loggingpython.error` module.
 

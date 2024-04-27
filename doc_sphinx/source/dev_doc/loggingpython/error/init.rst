@@ -9,7 +9,7 @@ Overview
 The `__init__.py` file is a crucial component of the `loggingpython` package, acting as a central hub for importing and exposing the various error classes. This simplifies the process of handling exceptions in applications, allowing developers to easily integrate error handling functionality into their projects.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the error classes and functions defined in the `error` module of the `loggingpython` package.
 
@@ -19,7 +19,7 @@ The following sections automatically generate documentation for the error classe
    :show-inheritance:
 
 Imported Modules and Classes
--------------------------------
+----------------------------
 
 The `__init__.py` file imports and exposes the following error classes:
 

@@ -1,5 +1,5 @@
 InvalidLogLevelError Documentation
-================================
+==================================
 
 The `InvalidLogLevelError` class is part of the `loggingpython` package, which provides a simple and extensible way to integrate logging into Python applications. This documentation offers a detailed insight into the functionality and usage of the `InvalidLogLevelError` exception class defined in this file.
 
@@ -9,7 +9,7 @@ Overview
 The `InvalidLogLevelError` exception class is responsible for indicating when an invalid log level is specified. This error is raised to signal that the log level provided does not match any of the supported log levels.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the `InvalidLogLevelError` class and its members within the `loggingpython.error` module.
 

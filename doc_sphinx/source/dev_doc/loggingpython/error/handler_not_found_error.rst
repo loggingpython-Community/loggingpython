@@ -9,7 +9,7 @@ Overview
 The `HandlerNotFoundError` exception class is responsible for indicating when a handler is not found in the logger's handlers. This error is raised to signal that the specified handler was not added to the logger, and therefore cannot be removed or manipulated further.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the `HandlerNotFoundError` class and its members within the `loggingpython.error` module.
 
