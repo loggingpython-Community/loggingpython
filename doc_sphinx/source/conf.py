@@ -21,8 +21,6 @@ html_theme_options = {
     'style_nav_header_background': 'white',
 }
 
-html_static_path = ['_static']
-
 exclude_patterns = [
     '_build',
     'Thumbs.db',
