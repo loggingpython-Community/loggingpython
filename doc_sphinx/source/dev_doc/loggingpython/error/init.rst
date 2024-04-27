@@ -17,6 +17,7 @@ The following sections automatically generate documentation for the error classe
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 Imported Modules and Classes
 ----------------------------

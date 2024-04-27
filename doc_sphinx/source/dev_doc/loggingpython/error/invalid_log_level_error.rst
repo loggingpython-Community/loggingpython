@@ -17,6 +17,7 @@ The following sections automatically generate documentation for the `InvalidLogL
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 .. autoclass:: loggingpython.error.InvalidLogLevelError
    :members:

@@ -17,6 +17,7 @@ The following sections automatically generate documentation for the `ServerUnrea
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 .. autoclass:: loggingpython.error.ServerUnreachableError
    :members:

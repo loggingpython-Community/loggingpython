@@ -17,6 +17,7 @@ The following sections automatically generate documentation for the `ServerMetho
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 .. autoclass:: loggingpython.error.ServerMethodCallError
    :members:

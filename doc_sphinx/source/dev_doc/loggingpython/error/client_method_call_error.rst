@@ -17,6 +17,7 @@ The following sections automatically generate documentation for the `ClientMetho
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 .. autoclass:: loggingpython.error.ClientMethodCallError
    :members:
