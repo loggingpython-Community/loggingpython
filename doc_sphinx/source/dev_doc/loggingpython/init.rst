@@ -9,12 +9,13 @@ The `loggingpython` module is a Python package that provides a simple and extens
 Automatic Documentation
 -----------------------
 
-The following sections automatically generate documentation for the error classes and functions defined in the `handler` module of the `loggingpython` package.
+The following sections automatically generate documentation for the classes and functions defined in the `loggingpython` package.
 
 .. automodule:: loggingpython
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
 .. autofunction:: src.loggingpython.hello_from_loggingpython
 .. autofunction:: src.loggingpython.getLogger

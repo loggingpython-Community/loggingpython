@@ -11,7 +11,7 @@ The `FileHandler` class is responsible for handling log messages by writing them
 Automatic Documentation
 -----------------------
 
-The following sections automatically generate documentation for the `ConsoleHandler` class and its members within the `loggingpython.handler` module.
+The following sections automatically generate documentation for the `FileHandler` class and its members within the `loggingpython.handler` module.
 
 .. automodule:: loggingpython.handler
    :members:

@@ -1,27 +1,41 @@
 Logger Documentation
 ====================
 
-.. automodule:: loggingpython.logger
+The `Logger` class is a central part of the `loggingpython` package, which provides a simple and extensible way to integrate logging into Python applications. This documentation provides a detailed insight into the functionalities and usage of the logger class defined in this file.
+
+Overview
+--------
+
+The `Logger` class is the heart of the logging system. It provides methods for adding and removing handlers, for logging messages at different severity levels and for catching and logging exceptions.
+
+Automatic Documentation
+-----------------------
+
+The following sections automatically generate documentation for the `Logger` class and its members within the `loggingpython` module.
+
+.. automodule:: loggingpython
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
 
-Logger Class
-------------
-
-The `Logger` class is a central part of the `loggingpython` package, providing a simple and extensible way to integrate logging into Python applications. This documentation provides a detailed insight into the functionalities and usage of the logger class defined in this file.
+.. autoclass:: loggingpython.Logger
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :no-index:
 
 Initialization
----------------
+--------------
 
-A `Logger` object is initialized with a name, an optional time format, and the minimum and maximum log severities.
+A `Logger` object is initialized with a name, an optional time format and the minimum and maximum log severities.
 
 .. code-block:: python
 
-   from loggingpython.logger import Logger
-   from loggingpython.log_levels import LogLevel
+    from loggingpython.logger import Logger
+    from loggingpython.log_levels import LogLevel
 
-   logger = Logger(name="my_logger", time_format="%Y-%m-%d %H:%M:%S", min_loglevel=LogLevel.INFO, max_loglevel=LogLevel.CRITICAL)
+    logger = Logger(name="my_logger", time_format="%Y-%m-%d %H:%M:%S", min_loglevel=LogLevel.INFO, max_loglevel=LogLevel.CRITICAL)
 
 Variables
 ---------
@@ -41,7 +55,7 @@ Methods
 - `_loglevel_under_max_loglevel(self, loglevel: LogLevel) -> bool`: Checks whether the transferred log level is below the maximum log level.
 - `_get_iso_8601_timestamp(self) -> str`: Returns the current timestamp in ISO 8601 format.
 - `_get_timestamp(self) -> str`: Returns the current timestamp in user-defined or ISO 8601 format.
-- `_format_message(self, message: str, loglevel: LogLevel) -> dict[str]`: Formats the log message with additional information such as timestamp, log level, and logger name.
+- `_format_message(self, message: str, loglevel: LogLevel) -> dict[str]`: Formats the log message with additional information such as timestamp, log level and logger name.
 - `addHandler(self, handler: Handler) -> None`: Adds a handler to the logger.
 - `removeHandler(self, handler: Handler) -> None`: Removes a handler from the logger.
 - `_log(self, message: str, loglevel: LogLevel = LogLevel.INFO) -> None`: Logs a message with the specified log level.
@@ -59,26 +73,26 @@ Methods
 Example
 -------
 
-Here is a simple example of how to create a logger, add a handler, and log messages at different severity levels.
+Here is a simple example of how to create a logger, add a handler and log messages at different severity levels.
 
 .. code-block:: python
 
-   from loggingpython.logger import Logger
-   from loggingpython.handler.consolehandler import ConsoleHandler
+    from loggingpython.logger import Logger
+    from loggingpython.handler.consolehandler import ConsoleHandler
 
-   # Create a logger
-   logger = Logger()
+    # Create a logger
+    logger = Logger()
 
-   # Add a handler
-   logger.addHandler(ConsoleHandler())
+    # Add a handler
+    logger.addHandler(ConsoleHandler())
 
-   # Logging messages
-   logger.info("The program is starting")
-   try:
-       # Code that could throw an exception
-       raise ValueError("An error has occurred")
-   except ValueError as e:
-       logger.error(f"An error has occurred: {e}")
+    # Logging messages
+    logger.info("The program is starting")
+    try:
+        # Code that could throw an exception
+        raise ValueError("An error has occurred")
+    except ValueError as e:
+        logger.error(f"An error has occurred: {e}")
 
 Summary
 -------
@@ -88,17 +102,17 @@ The logger class in `logger.py` provides a robust and flexible way to implement 
 License
 -------
 
-`loggingpython` is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+`loggingpython` is licensed under the `MIT License <https://opensource.org/licenses/MIT>`_.
 
-Further resources
+Further Resources
 -----------------
 
-- [GitHub Repository](https://github.com/loggingpython-Community/loggingpython)
-- [Issue Tracker](https://github.com/loggingpython-Community/loggingpython/issues)
-- [Changelog](https://github.com/loggingpython-Community/loggingpython/blob/main/CHANGELOG.md)
-- [PyPi](https://pypi.org/project/loggingpython/)
+- `GitHub Repository <https://github.com/loggingpython-Community/loggingpython>`_
+- `Issue Tracker <https://github.com/loggingpython-Community/loggingpython/issues>`_
+- `Changelog <https://github.com/loggingpython-Community/loggingpython/blob/main/CHANGELOG.md>`_
+- `PyPi <https://pypi.org/project/loggingpython/>`_
 
-Social media
+Social Media
 ------------
 
-- [GitHub](https://github.com/loggingpython-Community)
+- `GitHub <https://github.com/loggingpython-Community>`_
