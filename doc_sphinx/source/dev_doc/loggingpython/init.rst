@@ -16,10 +16,10 @@ The following sections automatically generate documentation for the error classe
    :undoc-members:
    :show-inheritance:
 
-.. autofunction:: src.loggingpython.__init__.hello_from_loggingpython
-.. autofunction:: src.loggingpython.__init__.getLogger
-.. autofunction:: src.loggingpython.__init__.getBasicLogger
-.. autofunction:: src.loggingpython.__init__.get_all_handlers
+.. autofunction:: src.loggingpython.hello_from_loggingpython
+.. autofunction:: src.loggingpython.getLogger
+.. autofunction:: src.loggingpython.getBasicLogger
+.. autofunction:: src.loggingpython.get_all_handlers
 
 Imported Modules and Classes
 -----------------------------
