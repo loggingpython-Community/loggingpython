@@ -15,7 +15,6 @@ The `CSVHandler` class is responsible for handling log messages in CSV format. I
    init
    handler
    consolehandler
-   csvhandler
    filehandler
    jsonhandler
    sqlhandler

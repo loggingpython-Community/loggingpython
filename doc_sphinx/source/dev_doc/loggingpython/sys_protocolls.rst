@@ -15,7 +15,6 @@ The `SysProtocolls` enum class is responsible for defining the various system pr
    init
    logger
    log_levels
-   sys_protocolls
    handler/init
    error/init
 

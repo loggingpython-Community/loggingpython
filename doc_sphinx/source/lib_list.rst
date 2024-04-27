@@ -7,6 +7,7 @@ This document contains a list of all external libraries used in the `loggingpyth
    :maxdepth: 2
    :caption: Contents:
 
+   index
    installation
    usage
    contribute

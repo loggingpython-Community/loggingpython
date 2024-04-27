@@ -17,7 +17,6 @@ The `JSONHandler` class is responsible for handling log messages in JSON format.
    consolehandler
    csvhandler
    filehandler
-   jsonhandler
    sqlhandler
    syshandler
 

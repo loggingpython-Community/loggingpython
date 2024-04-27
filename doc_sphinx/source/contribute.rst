@@ -7,10 +7,11 @@ Welcome to the contribution guide for `loggingpython`. We appreciate your intere
    :maxdepth: 2
    :caption: Contents:
 
+   index
    installation
    usage
-   contribute
    api_reference
+   lib_list
    changelog
    license
 

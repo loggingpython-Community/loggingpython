@@ -11,7 +11,7 @@ License
    usage
    contribute
    api_reference
+   lib_list
    changelog
-   license
 
 .. include:: LICENSE

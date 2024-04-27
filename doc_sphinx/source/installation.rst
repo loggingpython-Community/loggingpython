@@ -7,10 +7,11 @@ This section will guide you through the process of integrating `loggingpython` i
    :maxdepth: 2
    :caption: Contents:
 
-   installation
+   index
    usage
    contribute
    api_reference
+   lib_list
    changelog
    license
 

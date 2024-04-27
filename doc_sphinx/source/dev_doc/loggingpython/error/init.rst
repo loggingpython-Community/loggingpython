@@ -12,7 +12,6 @@ The `__init__.py` file is a crucial component of the `loggingpython` package, ac
    :maxdepth: 2
    :caption: Contents:
 
-   init
    client_method_cll_error
    handler_not_found_error
    invalid_handler_method_error

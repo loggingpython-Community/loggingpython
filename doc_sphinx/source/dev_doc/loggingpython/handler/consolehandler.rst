@@ -14,7 +14,6 @@ The `ConsoleHandler` class is responsible for handling log messages in the conso
 
    init
    handler
-   consolehandler
    csvhandler
    filehandler
    jsonhandler

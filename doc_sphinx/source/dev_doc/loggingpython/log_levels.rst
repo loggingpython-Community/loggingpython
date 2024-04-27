@@ -14,7 +14,6 @@ The `LogLevel` enum class is responsible for defining the various log levels tha
 
    init
    logger
-   log_levels
    sys_protocolls
    handler/init
    error/init

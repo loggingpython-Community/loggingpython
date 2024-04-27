@@ -8,6 +8,17 @@ Overview
 
 The `InvalidHandlerMethodError` exception class is responsible for indicating when a handler does not have the required 'emit' method. This error is raised to signal that the handler object passed to the logger does not implement the 'emit' method, which is necessary for processing log messages.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   init
+   client_method_cll_error
+   handler_not_found_error
+   invalid_log_level_error
+   server_method_call_error
+   server_unreachable_error
+
 Automatic Documentation
 -----------------------
 

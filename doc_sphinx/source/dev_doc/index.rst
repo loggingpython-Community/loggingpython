@@ -7,7 +7,6 @@ Welcome to the developer documentation for `loggingpython`. This section is desi
    :maxdepth: 2
    :caption: Contents:
 
-   index
    loggingpython/init
    make_own_handler
 

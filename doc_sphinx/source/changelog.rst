@@ -6,11 +6,12 @@ Changelog
    :maxdepth: 2
    :caption: Contents:
 
+   index
    installation
    usage
    contribute
    api_reference
-   changelog
+   lib_list
    license
 
 .. toctree::

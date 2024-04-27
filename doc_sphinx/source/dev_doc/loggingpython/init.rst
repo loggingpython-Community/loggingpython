@@ -10,7 +10,6 @@ The `loggingpython` module is a Python package that provides a simple and extens
    :maxdepth: 2
    :caption: Contents:
 
-   init
    logger
    log_levels
    sys_protocolls

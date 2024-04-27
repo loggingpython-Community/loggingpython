@@ -19,7 +19,6 @@ The `SysHandler` class is responsible for handling log messages over a network c
    filehandler
    jsonhandler
    sqlhandler
-   syshandler
 
 Automatic Documentation
 -----------------------

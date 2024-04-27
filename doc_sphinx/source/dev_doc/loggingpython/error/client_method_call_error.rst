@@ -8,6 +8,17 @@ Overview
 
 The `ClientMethodCallError` exception class is responsible for indicating when a method intended for the client is mistakenly called on the server. This error is raised to signal that a method that should only be executed by the client was incorrectly called by the server, which could lead to incorrect behavior.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   init
+   handler_not_found_error
+   invalid_handler_method_error
+   invalid_log_level_error
+   server_method_call_error
+   server_unreachable_error
+
 Automatic Documentation
 -----------------------
 

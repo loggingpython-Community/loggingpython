@@ -18,7 +18,6 @@ The `SQLHandler` class is responsible for handling log messages in SQL databases
    csvhandler
    filehandler
    jsonhandler
-   sqlhandler
    syshandler
 
 Automatic Documentation

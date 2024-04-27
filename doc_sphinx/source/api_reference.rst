@@ -7,10 +7,10 @@ The `loggingpython` package provides a simple and extensible way to integrate lo
    :maxdepth: 2
    :caption: Contents:
 
+   index
    installation
    usage
    contribute
-   api_reference
    changelog
    license
 

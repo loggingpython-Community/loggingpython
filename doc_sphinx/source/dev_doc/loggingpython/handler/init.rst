@@ -12,7 +12,6 @@ The `__init__.py` file is a crucial component of the `loggingpython` package, ac
    :maxdepth: 2
    :caption: Contents:
 
-   init
    handler
    consolehandler
    csvhandler

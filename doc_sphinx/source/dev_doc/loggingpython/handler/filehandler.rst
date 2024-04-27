@@ -16,7 +16,6 @@ The `FileHandler` class is responsible for handling log messages by writing them
    handler
    consolehandler
    csvhandler
-   filehandler
    jsonhandler
    sqlhandler
    syshandler

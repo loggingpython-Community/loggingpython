@@ -9,7 +9,6 @@ Create your own handlers in `loggingpython`
 
    index
    loggingpython/init
-   make_own_handler
 
 Why create your own handlers?
 -----------------------------

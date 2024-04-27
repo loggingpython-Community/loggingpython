@@ -7,10 +7,11 @@ This section will guide you on how to use `loggingpython` in your project.
    :maxdepth: 2
    :caption: Contents:
 
+   index
    installation
-   usage
    contribute
    api_reference
+   lib_list
    changelog
    license
 

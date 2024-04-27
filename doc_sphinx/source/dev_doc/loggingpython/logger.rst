@@ -13,7 +13,6 @@ The `Logger` class is the heart of the logging system. It provides methods for a
    :caption: Contents:
 
    init
-   logger
    log_levels
    sys_protocolls
    handler/init

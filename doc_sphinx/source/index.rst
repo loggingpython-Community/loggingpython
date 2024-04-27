@@ -9,6 +9,7 @@ Welcome to loggingpython's Documentation!
    usage
    contribute
    api_reference
+   lib_list
    changelog
    license
 

@@ -8,6 +8,17 @@ Overview
 
 The `InvalidLogLevelError` exception class is responsible for indicating when an invalid log level is specified. This error is raised to signal that the log level provided does not match any of the supported log levels.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   init
+   client_method_cll_error
+   handler_not_found_error
+   invalid_handler_method_error
+   server_method_call_error
+   server_unreachable_error
+
 Automatic Documentation
 -----------------------
 

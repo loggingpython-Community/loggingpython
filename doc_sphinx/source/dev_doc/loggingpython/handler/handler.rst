@@ -13,7 +13,6 @@ The `Handler` class serves as the base class for all handlers in the `loggingpyt
    :caption: Contents:
 
    init
-   handler
    consolehandler
    csvhandler
    filehandler
