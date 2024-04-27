@@ -13,14 +13,6 @@ language = 'en'
 
 html_theme = 'python_docs_theme'
 
-html_theme_options = {
-    'display_version': True,
-    'prev_next_buttons_location': 'bottom',
-    'style_external_links': False,
-    'vcs_pageview_mode': '',
-    'style_nav_header_background': 'white',
-}
-
 exclude_patterns = [
     '_build',
     'Thumbs.db',
