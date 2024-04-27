@@ -22,6 +22,27 @@ The following sections automatically generate documentation for the `InvalidHand
    :members:
    :undoc-members:
    :show-inheritance:
+   :no-index:
+
+Initialization
+--------------
+
+The `InvalidHandlerMethodError` exception class is initialized with a default message indicating that the handler must have an 'emit' method. However, it can be customized with a specific message when the exception is raised.
+
+.. code-block:: python
+
+    from ..handler.handler import Handler
+    
+    class InvalidHandlerMethodError(TypeError):
+        """
+        Raised when a handler does not have the required 'emit' method.
+        This error indicates that the handler object passed to the logger does not
+        implement the 'emit' method, which is necessary for processing log
+        messages.
+        """
+        def __init__(self, handler: Handler):
+            message: str = f"Handler '{handler.__class__.__name__}' must have an 'emit' method"
+            super().__init__(message)
 
 Usage
 -----
