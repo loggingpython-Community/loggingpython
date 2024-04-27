@@ -15,8 +15,4 @@ Changelog
    lib_list
    license
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Changelog:
-
-   CHANGELOG.md
+.. include:: CHANGELOG.md
