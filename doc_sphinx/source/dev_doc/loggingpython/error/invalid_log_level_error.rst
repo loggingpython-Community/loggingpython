@@ -23,23 +23,6 @@ The following sections automatically generate documentation for the `InvalidLogL
    :undoc-members:
    :show-inheritance:
 
-Initialization
---------------
-
-The `InvalidLogLevelError` exception class is initialized with a message indicating that an invalid log level has been specified. The message includes the invalid log level that was provided.
-
-.. code-block:: python
-
-    class InvalidLogLevelError(Exception):
-        """
-        Raised when an invalid log level is specified.
-        This error indicates that the provided log level does not match any of the
-        supported log levels.
-        """
-        def __init__(self, log_level: str) -> None:
-            message: str = f"Invalid log level specified: {log_level}"
-            super().__init__(message)
-
 Usage
 -----
 

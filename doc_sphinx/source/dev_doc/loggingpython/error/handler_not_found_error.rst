@@ -23,23 +23,6 @@ The following sections automatically generate documentation for the `HandlerNotF
    :undoc-members:
    :show-inheritance:
 
-Initialization
---------------
-
-The `HandlerNotFoundError` exception class is initialized with a default message indicating that the handler was not found in the logger's handlers. However, it can be customized with a specific message when the exception is raised.
-
-.. code-block:: python
-
-    class HandlerNotFoundError(ValueError):
-        """
-        Raised when a handler is not found in the logger's handlers.
-        This error indicates that the specified handler was not added to the
-        logger, and therefore cannot be removed.
-        """
-        def __init__(self,
-                     message="Handler not found in logger's handlers.") -> None:
-            super().__init__(message)
-
 Usage
 -----
 
