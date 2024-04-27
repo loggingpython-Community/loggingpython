@@ -1,7 +1,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
-sys.setrecursionlimit(9999999999)
+sys.setrecursionlimit(99999999)
 
 project = 'loggingpython'
 copyright = '2024, Mr-Major-K'
