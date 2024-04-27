@@ -256,7 +256,7 @@ class Logger:
                 DEBUG, INFO, WARNING, ERROR, CRITICAL.
 
         Raises:
-            ValueError: If the level is not supported.
+            InvalidLogLevelError: If the level is not supported.
         """
         try:
             self._validate_loglevel(loglevel)
@@ -276,7 +276,7 @@ class Logger:
             message (str): The message to log.
 
         Raises:
-            ValueError: If the level is not supported.
+            InvalidLogLevelError: If the level is not supported.
         """
 
         self._log(message, loglevel=LogLevel.DEBUG)
@@ -289,7 +289,7 @@ class Logger:
             message (str): The message to log.
 
         Raises:
-            ValueError: If the level is not supported.
+            InvalidLogLevelError: If the level is not supported.
         """
 
         self._log(message, loglevel=LogLevel.INFO)
@@ -302,7 +302,7 @@ class Logger:
             message (str): The message to log.
 
         Raises:
-            ValueError: If the level is not supported.
+            InvalidLogLevelError: If the level is not supported.
         """
 
         self._log(message, loglevel=LogLevel.WARNING)
@@ -315,7 +315,7 @@ class Logger:
             message (str): The message to log.
 
         Raises:
-            ValueError: If the level is not supported.
+            InvalidLogLevelError: If the level is not supported.
         """
 
         self._log(message, loglevel=LogLevel.ERROR)
@@ -328,7 +328,7 @@ class Logger:
             message (str): The message to log.
 
         Raises:
-            ValueError: If the level is not supported.
+            InvalidLogLevelError: If the level is not supported.
         """
         self._log(message, loglevel=LogLevel.CRITICAL)
 
@@ -348,16 +348,16 @@ class Logger:
 
         Returns:
             callable: The decorated function.
-    """
+        """
         def wrapper(*args, **kwargs):
             try:
-                self.debug(f"func '{func.__name__}' with {args}, {kwargs}")
+                self.debug(f"'{func.__name__}' with {args}, {kwargs}")
                 result = func(*args, **kwargs)
-                self.debug(f"func '{func.__name__}' completed successfully, \
+                self.debug(f"'{func.__name__}' completed successfully, \
 with '{result}'")
                 return result
             except Exception as e:
-                self.error(f"{func.__name__} failed with error: {str(e)}")
+                self.error(f"{func.__name__} failed: {str(e)}")
         return wrapper
 
     def catch_info(self, func):
@@ -380,11 +380,11 @@ with '{result}'")
         def wrapper(*args, **kwargs):
             try:
                 result = func(*args, **kwargs)
-                self.info(f"func '{func.__name__}' completed successfully, \
+                self.info(f"'{func.__name__}' completed successfully, \
 with '{result}'")
                 return result
             except Exception as e:
-                self.error(f"{func.__name__} failed with error: {str(e)}")
+                self.error(f"{func.__name__} failed: {str(e)}")
         return wrapper
 
     def catch_warning(self, func, except_type: BaseException = Exception):
@@ -406,21 +406,12 @@ with '{result}'")
 
         Returns:
             callable: The decorated function.
-
-        Raises:
-            TypeError: If except_type is not a class that inherits from
-            BaseException.
         """
-        if not isinstance(except_type, type) or not issubclass(except_type,
-                                                               BaseException):
-            raise TypeError("except_type must be a class that inherits from \
-BaseException")
-
         def wrapper(*args, **kwargs):
             try:
                 return func(*args, **kwargs)
             except except_type as e:
-                self.warning(f"{func.__name__} failed with error: {str(e)}")
+                self.warning(f"{func.__name__} failed: {str(e)}")
         return wrapper
 
     def catch_error(self, func, except_type: BaseException = Exception):
@@ -442,21 +433,12 @@ BaseException")
 
         Returns:
             callable: The decorated function.
-
-        Raises:
-            TypeError: If except_type is not a class that inherits from
-            BaseException.
         """
-        if not isinstance(except_type, type) or not issubclass(except_type,
-                                                               BaseException):
-            raise TypeError("except_type must be a class that inherits from \
-BaseException")
-
         def wrapper(*args, **kwargs):
             try:
                 return func(*args, **kwargs)
             except except_type as e:
-                self.error(f"{func.__name__} failed with error: {str(e)}")
+                self.error(f"{func.__name__} failed: {str(e)}")
         return wrapper
 
     def catch_critical(self, func, except_type: BaseException = Exception):
@@ -479,21 +461,12 @@ BaseException")
 
         Returns:
             callable: The decorated function.
-
-        Raises:
-            TypeError: If except_type is not a class that inherits from
-            BaseException.
         """
-        if not isinstance(except_type, type) or not issubclass(except_type,
-                                                               BaseException):
-            raise TypeError("except_type must be a class that inherits from \
-BaseException")
-
         def wrapper(*args, **kwargs):
             try:
                 return func(*args, **kwargs)
             except except_type as e:
-                self.critical(f"{func.__name__} failed with error: {str(e)}")
+                self.critical(f"{func.__name__} failed: {str(e)}")
         return wrapper
 
     def __repr__(self) -> str:
