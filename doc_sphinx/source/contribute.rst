@@ -5,6 +5,17 @@ Welcome to the contribution guide for `loggingpython`. We appreciate your intere
 
 .. toctree::
    :maxdepth: 2
+   :caption: Contents:
+
+   installation
+   usage
+   contribute
+   api_reference
+   changelog
+   license
+
+.. toctree::
+   :maxdepth: 2
    :caption: Contribution Guide:
 
    contributing
