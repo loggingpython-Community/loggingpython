@@ -1,5 +1,5 @@
 Usage of `loggingpython`
-=======================
+========================
 
 This section will guide you on how to use `loggingpython` in your project.
 
