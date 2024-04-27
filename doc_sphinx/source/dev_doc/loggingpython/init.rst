@@ -17,10 +17,10 @@ The following sections automatically generate documentation for the classes and 
    :show-inheritance:
    :no-index:
 
-.. autofunction:: src.loggingpython.hello_from_loggingpython
-.. autofunction:: src.loggingpython.getLogger
-.. autofunction:: src.loggingpython.getBasicLogger
-.. autofunction:: src.loggingpython.get_all_handlers
+.. autofunction:: loggingpython.hello_from_loggingpython
+.. autofunction:: loggingpython.getLogger
+.. autofunction:: loggingpython.getBasicLogger
+.. autofunction:: loggingpython.get_all_handlers
 
 Imported Modules and Classes
 -----------------------------
