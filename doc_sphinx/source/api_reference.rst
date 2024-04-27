@@ -10,6 +10,7 @@ The `loggingpython` package provides a simple and extensible way to integrate lo
    index
    installation
    usage
+   dev_doc/index
    contribute
    changelog
    license

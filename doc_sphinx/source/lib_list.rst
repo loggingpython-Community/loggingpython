@@ -12,6 +12,7 @@ This document contains a list of all external libraries used in the `loggingpyth
    usage
    contribute
    api_reference
+   dev_doc/index
    changelog
    license
 

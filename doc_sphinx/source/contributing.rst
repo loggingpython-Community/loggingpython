@@ -11,6 +11,7 @@ We welcome your contributions to the development of `loggingpython`. If you have
    usage
    contribute
    api_reference
+   dev_doc/index
    lib_list
    changelog
    license

@@ -11,6 +11,7 @@ This section will guide you on how to use `loggingpython` in your project.
    installation
    contribute
    api_reference
+   dev_doc/index
    lib_list
    changelog
    license
