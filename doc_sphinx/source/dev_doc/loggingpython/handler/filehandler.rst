@@ -8,6 +8,19 @@ Overview
 
 The `FileHandler` class is responsible for handling log messages by writing them to files. It inherits from the `Handler` class and implements specific methods for formatting and outputting log messages in files. It supports the creation of new log files based on the current date and allows the log format string to be customized. The `FileHandler` ensures that log messages are stored in a structured and easily accessible format, making them suitable for further analysis or review.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   init
+   handler
+   consolehandler
+   csvhandler
+   filehandler
+   jsonhandler
+   sqlhandler
+   syshandler
+
 Automatic Documentation
 -----------------------
 

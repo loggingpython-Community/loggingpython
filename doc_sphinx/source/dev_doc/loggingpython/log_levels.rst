@@ -8,6 +8,17 @@ Overview
 
 The `LogLevel` enum class is responsible for defining the various log levels that can be used within the logging system. It inherits from Python's built-in `Enum` class, which allows for the creation of enumerations with a set of symbolic names bound to unique, constant values. The `LogLevel` enum class defines five log levels, each representing a different severity of log messages.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   init
+   logger
+   log_levels
+   sys_protocolls
+   handler/init
+   error/init
+
 Automatic Documentation
 -----------------------
 

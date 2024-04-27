@@ -8,6 +8,19 @@ Overview
 
 The `ConsoleHandler` class is responsible for handling log messages in the console. It inherits from the `Handler` class and implements specific methods for formatting and outputting log messages in the console. It supports the coloring of log messages based on their severity and allows customization of the formatting string. The `ConsoleHandler` ensures that log messages are displayed in real-time, making it suitable for debugging and monitoring applications during development or runtime.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   init
+   handler
+   consolehandler
+   csvhandler
+   filehandler
+   jsonhandler
+   sqlhandler
+   syshandler
+
 Automatic Documentation
 -----------------------
 

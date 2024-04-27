@@ -8,6 +8,19 @@ Overview
 
 The `JSONHandler` class is responsible for handling log messages in JSON format. It inherits from the `Handler` class and implements specific methods for formatting and outputting log messages in JSON files. It supports the creation of new log files based on the current date and allows customization of the log format string. The `JSONHandler` ensures that log messages are stored in a structured and easily accessible format, making them suitable for further analysis or review.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   init
+   handler
+   consolehandler
+   csvhandler
+   filehandler
+   jsonhandler
+   sqlhandler
+   syshandler
+
 Automatic Documentation
 -----------------------
 

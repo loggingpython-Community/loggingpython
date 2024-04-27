@@ -8,6 +8,18 @@ Overview
 
 The `__init__.py` file is a crucial component of the `loggingpython` package, acting as a central hub for importing and exposing the various error classes. This simplifies the process of handling exceptions in applications, allowing developers to easily integrate error handling functionality into their projects.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   init
+   client_method_cll_error
+   handler_not_found_error
+   invalid_handler_method_error
+   invalid_log_level_error
+   server_method_call_error
+   server_unreachable_error
+
 Automatic Documentation
 -----------------------
 

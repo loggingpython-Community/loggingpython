@@ -8,6 +8,19 @@ Overview
 
 The `SysHandler` class is responsible for handling log messages over a network connection. It inherits from the `Handler` class and implements specific methods for sending and receiving log messages over a network connection. It supports both client and server modes, allowing for the establishment of connections, sending log messages, and handling incoming messages. The class provides decorators to ensure that certain methods can only be called by the client or server, enforcing the correct usage of the handler. It also includes error handling for scenarios such as server unreachability and incorrect method calls.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   init
+   handler
+   consolehandler
+   csvhandler
+   filehandler
+   jsonhandler
+   sqlhandler
+   syshandler
+
 Automatic Documentation
 -----------------------
 

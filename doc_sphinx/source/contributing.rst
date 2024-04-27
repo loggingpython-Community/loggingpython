@@ -3,6 +3,17 @@ Contributing to loggingpython
 
 We welcome your contributions to the development of `loggingpython`. If you have feedback, suggestions, or would like to contribute, please follow the steps below.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   installation
+   usage
+   contribute
+   api_reference
+   changelog
+   license
+
 Contribution Process
 --------------------
 
