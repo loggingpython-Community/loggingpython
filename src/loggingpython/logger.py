@@ -408,24 +408,6 @@ with '{result}'")
             callable: The decorated function.
         """
         def wrapper(*args, **kwargs):
-            """
-            Wrapper function for exception handling and logging.
-
-            This function is designed to be used within decorators to catch
-            exceptions thrown by the decorated function. It attempts to
-            execute the decorated function with the provided arguments and
-            keyword arguments. If an exception of the specified type is
-            caught, it logs the exception at the WARNING level using the
-            logger's `warning` method, including the function name and the
-            exception message. The exception is then re-raised to ensure that
-            the error is not silently ignored.
-
-            Args:
-                *args: Variable length argument list passed to the decorated
-                    function.
-                **kwargs: Arbitrary keyword arguments passed to the decorated
-                    function.
-            """
             try:
                 return func(*args, **kwargs)
             except except_type as e:
@@ -453,24 +435,6 @@ with '{result}'")
             callable: The decorated function.
         """
         def wrapper(*args, **kwargs):
-            """
-            Wrapper function for exception handling and logging.
-
-            This function is designed to be used within decorators to catch
-            exceptions thrown by the decorated function. It attempts to
-            execute the decorated function with the provided arguments and
-            keyword arguments. If an exception of the specified type is
-            caught, it logs the exception at the ERROR level using the
-            logger's `error` method, including the function name and the
-            exception message. The exception is then re-raised to ensure that
-            the error is not silently ignored.
-
-            Args:
-                *args: Variable length argument list passed to the decorated
-                    function.
-                **kwargs: Arbitrary keyword arguments passed to the decorated
-                    function.
-            """
             try:
                 return func(*args, **kwargs)
             except except_type as e:
@@ -499,24 +463,6 @@ with '{result}'")
             callable: The decorated function.
         """
         def wrapper(*args, **kwargs):
-            """
-            Wrapper function for exception handling and logging.
-
-            This function is designed to be used within decorators to catch
-            exceptions thrown by the decorated function. It attempts to
-            execute the decorated function with the provided arguments and
-            keyword arguments. If an exception of the specified type is
-            caught, it logs the exception at the CRITICAL level using the
-            logger's `critical` method, including the function name and the
-            exception message. The exception is then re-raised to ensure that
-            the error is not silently ignored.
-
-            Args:
-                *args: Variable length argument list passed to the decorated
-                    function.
-                **kwargs: Arbitrary keyword arguments passed to the decorated
-                    function.
-            """
             try:
                 return func(*args, **kwargs)
             except except_type as e:
