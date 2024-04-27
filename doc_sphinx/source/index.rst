@@ -53,7 +53,7 @@ For developers looking to extend `loggingpython` with custom handlers or contrib
    :maxdepth: 2
    :caption: Developer Documentation:
 
-   dev_doc/loggingpython/index
+   dev_doc/index
 
 License
 -------
