@@ -1,5 +1,5 @@
 SQLHandler Documentation
-==========================
+========================
 
 The `SQLHandler` class is part of the `loggingpython` package, which provides a simple and extensible way to integrate logging into Python applications. This documentation provides a detailed insight into the functionality and usage of the `SQLHandler` class defined in this file.
 
@@ -8,9 +8,8 @@ Overview
 
 The `SQLHandler` class is responsible for handling log messages in SQL databases. It inherits from the `Handler` class and implements specific methods for formatting and outputting log messages into SQL databases. It supports the creation of new log databases based on the current date and allows customization of the log format string. The `SQLHandler` ensures that log messages are stored in a structured and easily accessible format, making them suitable for further analysis or review.
 
-
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the `SQLHandler` class and its members within the `loggingpython.handler` module.
 

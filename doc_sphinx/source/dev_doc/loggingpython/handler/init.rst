@@ -9,7 +9,7 @@ Overview
 The `__init__.py` file is a crucial component of the `loggingpython` package, acting as a central hub for importing and exposing the various handler classes. This simplifies the process of using different handlers for logging in applications, allowing developers to easily integrate logging functionality into their projects.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the error classes and functions defined in the `handler` module of the `loggingpython` package.
 
@@ -19,7 +19,7 @@ The following sections automatically generate documentation for the error classe
    :show-inheritance:
 
 Imported Modules and Classes
--------------------------------
+----------------------------
 
 The `__init__.py` file imports and exposes the following handler classes:
 

@@ -1,5 +1,5 @@
 FileHandler Documentation
-==========================
+=========================
 
 The `FileHandler` class is part of the `loggingpython` package, which provides a simple and extensible way to integrate logging into Python applications. This documentation provides a detailed insight into the functionality and usage of the `FileHandler` class defined in this file.
 
@@ -9,7 +9,7 @@ Overview
 The `FileHandler` class is responsible for handling log messages by writing them to files. It inherits from the `Handler` class and implements specific methods for formatting and outputting log messages in files. It supports the creation of new log files based on the current date and allows the log format string to be customized. The `FileHandler` ensures that log messages are stored in a structured and easily accessible format, making them suitable for further analysis or review.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the `ConsoleHandler` class and its members within the `loggingpython.handler` module.
 

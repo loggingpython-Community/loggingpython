@@ -1,5 +1,5 @@
 Handler Documentation
-=======================
+=====================
 
 The `Handler` class is a core component of the `loggingpython` package, providing a foundational class for all handlers within the logging system. This documentation offers a detailed explanation of the `Handler` class defined in this file, including its purpose, initialization, variables, and methods.
 
@@ -9,7 +9,7 @@ Overview
 The `Handler` class serves as the base class for all handlers in the `loggingpython` package. Handlers are responsible for processing and outputting log messages. This class defines the interface that all handler classes must adhere to, ensuring consistency across different types of handlers.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the `Handler` class and its members within the `loggingpython.handler` module.
 

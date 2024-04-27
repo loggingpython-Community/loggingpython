@@ -1,5 +1,5 @@
 SysHandler Documentation
-==========================
+========================
 
 The `SysHandler` class is part of the `loggingpython` package, which provides a simple and extensible way to integrate logging into Python applications. This documentation provides a detailed insight into the functionality and usage of the `SysHandler` class defined in this file.
 
@@ -9,7 +9,7 @@ Overview
 The `SysHandler` class is responsible for handling log messages over a network connection. It inherits from the `Handler` class and implements specific methods for sending and receiving log messages over a network connection. It supports both client and server modes, allowing for the establishment of connections, sending log messages, and handling incoming messages. The class provides decorators to ensure that certain methods can only be called by the client or server, enforcing the correct usage of the handler. It also includes error handling for scenarios such as server unreachability and incorrect method calls.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the `SysHandler` class and its members within the `loggingpython.handler` module.
 
