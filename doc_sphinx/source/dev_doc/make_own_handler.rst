@@ -31,7 +31,7 @@ Here is a simple example of a custom handler that writes log entries to a file:
                 file.write(f"{record.levelname}: {record.msg}\n")
 
 Use of your own handler
-----------------------
+-----------------------
 
 To use the created handler, you must add it to a logger:
 
@@ -53,7 +53,7 @@ By creating your own handlers, you can customize the logging functionality of `l
 This section is intended to provide clear guidance and examples for developers who wish to extend `loggingpython`.
 
 Contribute to `loggingpython`
----------------------------
+----------------------------
 
 We invite you to contribute your own handlers to `loggingpython`. By sharing your creative solutions and innovations, we can continue to improve the library and make it accessible to the entire community.
 
@@ -75,6 +75,6 @@ Further resources
 - `PyPi <https://pypi.org/project/loggingpython/>`_
 
 Social media
--------------
+------------
 
 - `GitHub <https://github.com/loggingpython-Community>`_
