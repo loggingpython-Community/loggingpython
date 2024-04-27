@@ -1,5 +1,5 @@
 FileHandler Documentation
-==========================
+=========================
 
 The `FileHandler` class is part of the `loggingpython` package, which provides a simple and extensible way to integrate logging into Python applications. This documentation provides a detailed insight into the functionality and usage of the `FileHandler` class defined in this file.
 

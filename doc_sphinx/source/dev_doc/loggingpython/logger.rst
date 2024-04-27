@@ -1,5 +1,5 @@
-Logger Module
-=============
+Logger Documentation
+====================
 
 .. automodule:: loggingpython.logger
    :members:
@@ -7,7 +7,7 @@ Logger Module
    :show-inheritance:
 
 Logger Class
---------------
+------------
 
 The `Logger` class is a central part of the `loggingpython` package, providing a simple and extensible way to integrate logging into Python applications. This documentation provides a detailed insight into the functionalities and usage of the logger class defined in this file.
 

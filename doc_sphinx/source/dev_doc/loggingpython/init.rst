@@ -1,5 +1,5 @@
 loggingpython Module
-=====================
+====================
 
 Overview
 --------
@@ -7,7 +7,7 @@ Overview
 The `loggingpython` module is a Python package that provides a simple and extensible way to integrate logging into your applications. The package starts with a basic logger and can be extended with additional functions to meet the requirements of your application.
 
 Automatic Documentation
--------------------------
+-----------------------
 
 The following sections automatically generate documentation for the error classes and functions defined in the `handler` module of the `loggingpython` package.
 
