@@ -1,6 +1,5 @@
 # anythings
 many_char_lines_words.py
-.vscode
 
 # Distribution directory
 *.egg-info/
