@@ -27,9 +27,12 @@ jobs:
         python setup.py sdist bdist_wheel || (echo "Failed to build wheel package" && exit 1)
         pip install dist/loggingpython-*-py3-none-any.whl || (echo "Failed to install wheel package" && exit 1)
 
-    - name: Build HTML documentation
+    - name: Build HTML documentation for each file
       run: |
-        sphinx-build -b html doc_sphinx/source doc_sphinx/build
+        for file in $(find doc_sphinx/source -name '*.rst'); do
+          echo "Building documentation for $file"
+          sphinx-build -b html "$file" doc_sphinx/build
+        done
 
     - name: Add and commit documentation changes
       run: |
