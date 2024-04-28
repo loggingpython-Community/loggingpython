@@ -400,9 +400,9 @@ with '{result}'")
 
         Args:
             func (callable): The function to be decorated.
-            except_type (BaseException, optional): The type of exception to
-            catch. Defaults to Exception, which catches all exceptions that
-            inherit from BaseException.
+            except_type (BaseException, optional): The type of exception to \
+catch. Defaults to Exception, which catches all exceptions that inherit from \
+BaseException.
 
         Returns:
             callable: The decorated function.
@@ -427,9 +427,9 @@ with '{result}'")
 
         Args:
             func (callable): The function to be decorated.
-            except_type (BaseException, optional): The type of exception to
-            catch. Defaults to Exception, which catches all exceptions that
-            inherit from BaseException.
+            except_type (BaseException, optional): The type of exception to \
+catch. Defaults to Exception, which catches all exceptions that inherit from \
+BaseException.
 
         Returns:
             callable: The decorated function.
@@ -455,9 +455,9 @@ with '{result}'")
 
         Args:
             func (callable): The function to be decorated.
-            except_type (BaseException, optional): The type of exception to
-            catch. Defaults to Exception, which catches all exceptions that
-            inherit from BaseException.
+            except_type (BaseException, optional): The type of exception to \
+catch. Defaults to Exception, which catches all exceptions that inherit from \
+BaseException.
 
         Returns:
             callable: The decorated function.
