@@ -33,7 +33,7 @@ jobs:
           echo "Building documentation for $file"
           sphinx-build -b html "$file" doc_sphinx/build
         done
-
+        
     - name: Add and commit documentation changes
       run: |
         git config --global user.name 'GitHub Actions'
@@ -41,5 +41,10 @@ jobs:
         git add -A
         git commit -m "Update documentation" || echo "No changes to commit"
         git push origin master
+
+      shell: /usr/bin/bash -e {0}
+
       env:
+        pythonLocation: /opt/hostedtoolcache/Python/3.12.3/x64
+        LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.3/x64/lib
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
