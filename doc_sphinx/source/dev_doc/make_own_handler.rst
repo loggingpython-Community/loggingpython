@@ -3,13 +3,6 @@ Create your own handlers in `loggingpython`
 
 `loggingpython` provides a flexible and extensible architecture that allows developers to create their own handlers to fulfill specific logging functionalities. This documentation will guide you through the process of creating your own handler, including the basics, a practical example and a summary of the benefits.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   index
-   loggingpython/init
-
 Why create your own handlers?
 -----------------------------
 

@@ -8,18 +8,6 @@ Overview
 
 The `CSVHandler` class is responsible for handling log messages in CSV format. It inherits from the `Handler` class and implements specific methods for formatting and outputting log messages in CSV files. It supports the creation of new log files based on the current date and allows the log format string to be customized. The `CSVHandler` ensures that log messages are stored in a structured and easily accessible format, making them suitable for further analysis or review.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   init
-   handler
-   consolehandler
-   filehandler
-   jsonhandler
-   sqlhandler
-   syshandler
-
 Automatic Documentation
 -----------------------
 

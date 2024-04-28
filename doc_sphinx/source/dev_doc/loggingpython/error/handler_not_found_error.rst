@@ -8,17 +8,6 @@ Overview
 
 The `HandlerNotFoundError` exception class is responsible for indicating when a handler is not found in the logger's handlers. This error is raised to signal that the specified handler was not added to the logger, and therefore cannot be removed or manipulated further.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   init
-   client_method_call_error
-   invalid_handler_method_error
-   invalid_log_level_error
-   server_method_call_error
-   server_unreachable_error
-
 Automatic Documentation
 -----------------------
 

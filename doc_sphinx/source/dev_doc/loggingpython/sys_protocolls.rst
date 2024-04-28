@@ -8,16 +8,6 @@ Overview
 
 The `SysProtocolls` enum class is responsible for defining the various system protocols that can be used within the logging system. It inherits from Python's built-in `Enum` class, which allows for the creation of enumerations with a set of symbolic names bound to unique, constant values. The `SysProtocolls` enum class defines two protocols, each representing a different type of network communication.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   init
-   logger
-   log_levels
-   handler/init
-   error/init
-
 Automatic Documentation
 -----------------------
 

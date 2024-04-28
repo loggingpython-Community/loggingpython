@@ -8,18 +8,6 @@ Overview
 
 The `Handler` class serves as the base class for all handlers in the `loggingpython` package. Handlers are responsible for processing and outputting log messages. This class defines the interface that all handler classes must adhere to, ensuring consistency across different types of handlers.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   init
-   consolehandler
-   csvhandler
-   filehandler
-   jsonhandler
-   sqlhandler
-   syshandler
-
 Automatic Documentation
 -----------------------
 

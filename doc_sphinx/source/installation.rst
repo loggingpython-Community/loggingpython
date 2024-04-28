@@ -3,18 +3,6 @@ Installation
 
 This section will guide you through the process of integrating `loggingpython` into your project.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   index
-   usage
-   contribute
-   api_reference
-   lib_list
-   changelog
-   license
-
 Installation with pip
 ---------------------
 

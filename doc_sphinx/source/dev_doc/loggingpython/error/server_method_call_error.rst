@@ -8,17 +8,6 @@ Overview
 
 The `ServerMethodCallError` exception class is responsible for indicating when a method intended for the server is mistakenly called on the client. This error is raised to signal that a method that should only be executed by the server was incorrectly called by the client, which could lead to incorrect behavior.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   init
-   client_method_call_error
-   handler_not_found_error
-   invalid_handler_method_error
-   invalid_log_level_error
-   server_unreachable_error
-
 Automatic Documentation
 -----------------------
 

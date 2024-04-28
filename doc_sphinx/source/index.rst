@@ -2,7 +2,7 @@ Welcome to loggingpython's Documentation!
 =========================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    installation

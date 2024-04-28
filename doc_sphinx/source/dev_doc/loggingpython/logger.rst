@@ -8,16 +8,6 @@ Overview
 
 The `Logger` class is the heart of the logging system. It provides methods for adding and removing handlers, for logging messages at different severity levels and for catching and logging exceptions.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   init
-   log_levels
-   sys_protocolls
-   handler/init
-   error/init
-
 Automatic Documentation
 -----------------------
 

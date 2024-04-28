@@ -3,19 +3,6 @@ Libraries used in the `loggingpython` project
 
 This document contains a list of all external libraries used in the `loggingpython` project.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   index
-   installation
-   usage
-   contribute
-   api_reference
-   dev_doc/index
-   changelog
-   license
-
 Main libraries
 --------------
 

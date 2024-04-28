@@ -3,19 +3,6 @@ Usage of `loggingpython`
 
 This section will guide you on how to use `loggingpython` in your project.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   index
-   installation
-   contribute
-   api_reference
-   dev_doc/index
-   lib_list
-   changelog
-   license
-
 Simple Example
 --------------
 

@@ -8,17 +8,6 @@ Overview
 
 The `ServerUnreachableError` exception class is designed to indicate when a client fails to establish a connection to the server. This error signifies that the server might be unreachable due to network issues, incorrect server address or port, or the server not being active.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   init
-   client_method_call_error
-   handler_not_found_error
-   invalid_handler_method_error
-   invalid_log_level_error
-   server_method_call_error
-
 Automatic Documentation
 -----------------------
 
