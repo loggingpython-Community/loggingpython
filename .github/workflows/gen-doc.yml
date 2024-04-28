@@ -27,13 +27,10 @@ jobs:
         python setup.py sdist bdist_wheel || (echo "Failed to build wheel package" && exit 1)
         pip install dist/loggingpython-*-py3-none-any.whl || (echo "Failed to install wheel package" && exit 1)
 
-    - name: Build HTML documentation for each file
+    - name: Build HTML documentation
       run: |
-        for file in $(find doc_sphinx/source -name '*.rst'); do
-          echo "Building documentation for $file"
-          sphinx-build -b html "$file" doc_sphinx/build
-        done
-        
+        sphinx-build -b html doc_sphinx/source doc_sphinx/build
+
     - name: Add and commit documentation changes
       run: |
         git config --global user.name 'GitHub Actions'
@@ -41,10 +38,5 @@ jobs:
         git add -A
         git commit -m "Update documentation" || echo "No changes to commit"
         git push origin master
-
-      shell: /usr/bin/bash -e {0}
-
       env:
-        pythonLocation: /opt/hostedtoolcache/Python/3.12.3/x64
-        LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.3/x64/lib
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
