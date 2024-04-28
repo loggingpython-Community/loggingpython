@@ -4,7 +4,7 @@ many_char_lines_words.py
 # Distribution directory
 *.egg-info/
 
-# testsa and logs
+# test staff and logs
 test.py
 test_server.py
 test.md
