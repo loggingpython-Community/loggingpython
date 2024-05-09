@@ -49,7 +49,6 @@ handling and logging mechanisms for both client and server-side operations.
 """
 
 import os
-from datetime import timedelta
 from datetime import datetime
 
 
@@ -75,7 +74,6 @@ class FileHandler(Handler):
                  path: str = "logs",
                  logformat_string: str = "%(asctime)s: [%(loggername)s]: \
 [%(loglevel)s]: %(message)s",
-                 new_file_after: timedelta = timedelta(days=1)
                  ) -> None:
         """
         Initializes the FileHandler with the given name, log path, and log

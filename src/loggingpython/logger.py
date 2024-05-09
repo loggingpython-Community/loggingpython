@@ -55,6 +55,7 @@ powerful way to integrate logging into Python applications.
 """
 
 from datetime import datetime, timezone
+from typing import Callable
 
 from .log_levels import LogLevel
 from .handler import Handler
@@ -98,7 +99,7 @@ class Logger:
     _ISO_8601_FORMAT: str = "%Y-%m-%dT%H:%M:%S.%f%z"
 
     def __init__(self, name: str,
-                 time_format: str = None,
+                 time_format: str | None,
                  min_loglevel: LogLevel = LogLevel.INFO,
                  max_loglevel: LogLevel = LogLevel.CRITICAL) -> None:
         """
@@ -193,7 +194,8 @@ class Logger:
             return datetime.now(timezone.utc).strftime(self.time_format)
         return self._get_iso_8601_timestamp()
 
-    def _format_message(self, message: str, loglevel: LogLevel) -> dict[str]:
+    def _format_message(self, message: str,
+                        loglevel: LogLevel) -> dict[str]:
         """
         Formats the log message with additional information.
 
@@ -244,7 +246,8 @@ class Logger:
             raise HandlerNotFoundError()
         self.handlers.remove(handler)
 
-    def _log(self, message: str, loglevel: LogLevel = LogLevel.INFO) -> None:
+    def _log(self, message: str,
+             loglevel: LogLevel = LogLevel.INFO) -> None:
         """
         Logs a message with the specified log level and includes
             a full traceback.
@@ -332,7 +335,7 @@ class Logger:
         """
         self._log(message, loglevel=LogLevel.CRITICAL)
 
-    def catch_debug(self, func):
+    def catch_debug(self, func) -> Callable:
         """
         A decorator for catching exceptions and logging them at the DEBUG
         level.
@@ -360,7 +363,7 @@ with '{result}'")
                 self.error(f"{func.__name__} failed: {str(e)}")
         return wrapper
 
-    def catch_info(self, func):
+    def catch_info(self, func) -> Callable:
         """
         A decorator for catching exceptions and logging them at the INFO level.
 
@@ -387,7 +390,8 @@ with '{result}'")
                 self.error(f"{func.__name__} failed: {str(e)}")
         return wrapper
 
-    def catch_warning(self, func, except_type: BaseException = Exception):
+    def catch_warning(self, func,
+                      except_type: BaseException = Exception) -> Callable:
         """
         A decorator for catching exceptions and logging them at the WARNING
         level.
@@ -414,7 +418,8 @@ BaseException.
                 self.warning(f"{func.__name__} failed: {str(e)}")
         return wrapper
 
-    def catch_error(self, func, except_type: BaseException = Exception):
+    def catch_error(self, func,
+                    except_type: BaseException = Exception) -> Callable:
         """
         A decorator for catching exceptions and logging them at the ERROR
         level.
@@ -441,7 +446,8 @@ BaseException.
                 self.error(f"{func.__name__} failed: {str(e)}")
         return wrapper
 
-    def catch_critical(self, func, except_type: BaseException = Exception):
+    def catch_critical(self, func,
+                       except_type: BaseException = Exception) -> Callable:
         """
         A decorator for catching exceptions and logging them at the CRITICAL
         level.

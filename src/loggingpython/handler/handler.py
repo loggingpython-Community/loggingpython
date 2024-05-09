@@ -110,4 +110,4 @@ class Handler:
         return "Handler()"
 
     def __str__(self) -> str:
-        return "Handler with: None"
+        return "Handler Base class"
